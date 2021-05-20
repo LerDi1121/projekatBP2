@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="DistanceLearning.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="DistanceLearningTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DistanceLearning" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="DistanceLearningContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Messages" EntityType="DistanceLearning.Message" />
+          <EntitySet Name="Receives" EntityType="DistanceLearning.Receive" />
+          <EntitySet Name="Users" EntityType="DistanceLearning.User" />
+          <AssociationSet Name="ReceiveUser" Association="DistanceLearning.ReceiveUser">
+            <End Role="Receive" EntitySet="Receives" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="MessageReceive" Association="DistanceLearning.MessageReceive">
+            <End Role="Message" EntitySet="Messages" />
+            <End Role="Receive" EntitySet="Receives" />
+          </AssociationSet>
+          <AssociationSet Name="UserMessage" Association="DistanceLearning.UserMessage">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Message" EntitySet="Messages" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="Id_Message" />
+          </Key>
+          <Property Name="Id_Message" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" />
+          <Property Name="Posting_date" Type="DateTime" Nullable="false" />
+          <Property Name="Text" Type="String" Nullable="false" />
+          <NavigationProperty Name="Receives" Relationship="DistanceLearning.MessageReceive" FromRole="Message" ToRole="Receive" />
+          <NavigationProperty Name="User" Relationship="DistanceLearning.UserMessage" FromRole="Message" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Receive">
+          <Key>
+            <PropertyRef Name="Id_Receives" />
+          </Key>
+          <Property Name="Id_Receives" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date_of_deletion" Type="DateTime" Nullable="false" />
+          <Property Name="Date_of_reading" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="DistanceLearning.ReceiveUser" FromRole="Receive" ToRole="User" />
+          <NavigationProperty Name="Messages" Relationship="DistanceLearning.MessageReceive" FromRole="Receive" ToRole="Message" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id_User" />
+          </Key>
+          <Property Name="Id_User" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" />
+          <Property Name="Surname" Type="String" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Role" Type="DistanceLearning.Role" Nullable="false" />
+          <Property Name="eMail" Type="String" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" />
+          <NavigationProperty Name="Receives" Relationship="DistanceLearning.ReceiveUser" FromRole="User" ToRole="Receive" />
+          <NavigationProperty Name="Messages" Relationship="DistanceLearning.UserMessage" FromRole="User" ToRole="Message" />
+        </EntityType>
+        <EntityType Name="Teacher" BaseType="DistanceLearning.User">
+          <Property Name="Id_Teacher" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Proession" Type="String" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Student" BaseType="DistanceLearning.User">
+          <Property Name="Id_Student" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Class" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="ReceiveUser">
+          <End Type="DistanceLearning.Receive" Role="Receive" Multiplicity="*" />
+          <End Type="DistanceLearning.User" Role="User" Multiplicity="*" />
+        </Association>
+        <Association Name="MessageReceive">
+          <End Type="DistanceLearning.Message" Role="Message" Multiplicity="*" />
+          <End Type="DistanceLearning.Receive" Role="Receive" Multiplicity="*" />
+        </Association>
+        <Association Name="UserMessage">
+          <End Type="DistanceLearning.User" Role="User" Multiplicity="1" />
+          <End Type="DistanceLearning.Message" Role="Message" Multiplicity="*" />
+        </Association>
+        <EnumType Name="Role">
+          <Member Name="Teacher" Value="0" />
+          <Member Name="Student" Value="1" />
+        </EnumType>
+        <EnumType Name="Course_status">
+          <Member Name="In_the_plan" Value="0" />
+          <Member Name="Active" Value="1" />
+          <Member Name="Completed" Value="2" />
+        </EnumType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="DistanceLearning" />
+        <Alias Key="Target" Value="DistanceLearning.Store" />
+        <EntityContainerMapping CdmEntityContainer="DistanceLearningContainer" StorageEntityContainer="DistanceLearningTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
