@@ -28,6 +28,59 @@
             <End Role="User" EntitySet="Users" />
             <End Role="Message" EntitySet="Messages" />
           </AssociationSet>
+          <EntitySet Name="Courses" EntityType="DistanceLearning.Course" />
+          <AssociationSet Name="CourseTeacher" Association="DistanceLearning.CourseTeacher">
+            <End Role="Course" EntitySet="Courses" />
+            <End Role="Teacher" EntitySet="Users" />
+          </AssociationSet>
+          <EntitySet Name="Registereds" EntityType="DistanceLearning.Registered" />
+          <EntitySet Name="Teaching_topic" EntityType="DistanceLearning.Teaching_topic" />
+          <EntitySet Name="Test" EntityType="DistanceLearning.Test" />
+          <AssociationSet Name="RegisteredStudent" Association="DistanceLearning.RegisteredStudent">
+            <End Role="Registered" EntitySet="Registereds" />
+            <End Role="Student" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="RegisteredCourse" Association="DistanceLearning.RegisteredCourse">
+            <End Role="Registered" EntitySet="Registereds" />
+            <End Role="Course" EntitySet="Courses" />
+          </AssociationSet>
+          <AssociationSet Name="Teaching_topicCourse" Association="DistanceLearning.Teaching_topicCourse">
+            <End Role="Teaching_topic" EntitySet="Teaching_topic" />
+            <End Role="Course" EntitySet="Courses" />
+          </AssociationSet>
+          <AssociationSet Name="TestCourse" Association="DistanceLearning.TestCourse">
+            <End Role="Test" EntitySet="Test" />
+            <End Role="Course" EntitySet="Courses" />
+          </AssociationSet>
+          <EntitySet Name="Consists_of" EntityType="DistanceLearning.Consists_of" />
+          <EntitySet Name="Questions" EntityType="DistanceLearning.Question" />
+          <EntitySet Name="Answers" EntityType="DistanceLearning.Answers" />
+          <EntitySet Name="Takes" EntityType="DistanceLearning.Takes" />
+          <EntitySet Name="Mark" EntityType="DistanceLearning.Mark" />
+          <AssociationSet Name="TakesTest" Association="DistanceLearning.TakesTest">
+            <End Role="Takes" EntitySet="Takes" />
+            <End Role="Test" EntitySet="Test" />
+          </AssociationSet>
+          <AssociationSet Name="Consists_ofTest" Association="DistanceLearning.Consists_ofTest">
+            <End Role="Consists_of" EntitySet="Consists_of" />
+            <End Role="Test" EntitySet="Test" />
+          </AssociationSet>
+          <AssociationSet Name="QuestionConsists_of" Association="DistanceLearning.QuestionConsists_of">
+            <End Role="Question" EntitySet="Questions" />
+            <End Role="Consists_of" EntitySet="Consists_of" />
+          </AssociationSet>
+          <AssociationSet Name="QuestionAnswers" Association="DistanceLearning.QuestionAnswers">
+            <End Role="Answers" EntitySet="Answers" />
+            <End Role="Question" EntitySet="Questions" />
+          </AssociationSet>
+          <AssociationSet Name="TakesRegistered" Association="DistanceLearning.TakesRegistered">
+            <End Role="Takes" EntitySet="Takes" />
+            <End Role="Registered" EntitySet="Registereds" />
+          </AssociationSet>
+          <AssociationSet Name="MarkTakes" Association="DistanceLearning.MarkTakes">
+            <End Role="Mark" EntitySet="Mark" />
+            <End Role="Takes" EntitySet="Takes" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Message">
           <Key>
@@ -68,17 +121,19 @@
           <Property Name="Id_Teacher" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Proession" Type="String" Nullable="false" />
           <Property Name="Title" Type="String" Nullable="false" />
+          <NavigationProperty Name="Courses" Relationship="DistanceLearning.CourseTeacher" FromRole="Teacher" ToRole="Course" />
         </EntityType>
         <EntityType Name="Student" BaseType="DistanceLearning.User">
           <Property Name="Id_Student" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Class" Type="String" Nullable="false" />
+          <NavigationProperty Name="Registereds" Relationship="DistanceLearning.RegisteredStudent" FromRole="Student" ToRole="Registered" />
         </EntityType>
         <Association Name="ReceiveUser">
           <End Type="DistanceLearning.Receive" Role="Receive" Multiplicity="*" />
-          <End Type="DistanceLearning.User" Role="User" Multiplicity="*" />
+          <End Type="DistanceLearning.User" Role="User" Multiplicity="1" />
         </Association>
         <Association Name="MessageReceive">
-          <End Type="DistanceLearning.Message" Role="Message" Multiplicity="*" />
+          <End Type="DistanceLearning.Message" Role="Message" Multiplicity="1" />
           <End Type="DistanceLearning.Receive" Role="Receive" Multiplicity="*" />
         </Association>
         <Association Name="UserMessage">
@@ -89,11 +144,161 @@
           <Member Name="Teacher" Value="0" />
           <Member Name="Student" Value="1" />
         </EnumType>
-        <EnumType Name="Course_status">
-          <Member Name="In_the_plan" Value="0" />
-          <Member Name="Active" Value="1" />
-          <Member Name="Completed" Value="2" />
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="Id_Course" />
+          </Key>
+          <Property Name="Id_Course" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Teacher" Relationship="DistanceLearning.CourseTeacher" FromRole="Course" ToRole="Teacher" />
+          <Property Name="Course_name" Type="String" Nullable="false" />
+          <Property Name="Course_status" Type="DistanceLearning.CourseStatus" Nullable="false" />
+          <NavigationProperty Name="Registereds" Relationship="DistanceLearning.RegisteredCourse" FromRole="Course" ToRole="Registered" />
+          <NavigationProperty Name="Teaching_topic" Relationship="DistanceLearning.Teaching_topicCourse" FromRole="Course" ToRole="Teaching_topic" />
+          <NavigationProperty Name="Tests" Relationship="DistanceLearning.TestCourse" FromRole="Course" ToRole="Test" />
+        </EntityType>
+        <Association Name="CourseTeacher">
+          <End Type="DistanceLearning.Course" Role="Course" Multiplicity="*" />
+          <End Type="DistanceLearning.Teacher" Role="Teacher" Multiplicity="1" />
+        </Association>
+        <EnumType Name="CourseStatus">
+          <Member Name="Active" Value="0" />
+          <Member Name="Inactive" Value="1" />
+          <Member Name="InPreparation" Value="2" />
         </EnumType>
+        <EntityType Name="Registered">
+          <Key>
+            <PropertyRef Name="Id_Registered" />
+          </Key>
+          <Property Name="Id_Registered" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Application_date" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Student" Relationship="DistanceLearning.RegisteredStudent" FromRole="Registered" ToRole="Student" />
+          <NavigationProperty Name="Course" Relationship="DistanceLearning.RegisteredCourse" FromRole="Registered" ToRole="Course" />
+          <NavigationProperty Name="Takes" Relationship="DistanceLearning.TakesRegistered" FromRole="Registered" ToRole="Takes" />
+        </EntityType>
+        <EntityType Name="Teaching_topic">
+          <Key>
+            <PropertyRef Name="Id_Teaching_topic" />
+          </Key>
+          <Property Name="Id_Teaching_topic" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Topic_name" Type="String" Nullable="false" />
+          <Property Name="Serial_number" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Course" Relationship="DistanceLearning.Teaching_topicCourse" FromRole="Teaching_topic" ToRole="Course" />
+        </EntityType>
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="Id_Test" />
+          </Key>
+          <Property Name="Id_Test" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Test_Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="Course" Relationship="DistanceLearning.TestCourse" FromRole="Test" ToRole="Course" />
+          <Property Name="Points" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Takes" Relationship="DistanceLearning.TakesTest" FromRole="Test" ToRole="Takes" />
+          <NavigationProperty Name="Consists_of" Relationship="DistanceLearning.Consists_ofTest" FromRole="Test" ToRole="Consists_of" />
+        </EntityType>
+        <Association Name="RegisteredStudent">
+          <End Type="DistanceLearning.Registered" Role="Registered" Multiplicity="*" />
+          <End Type="DistanceLearning.Student" Role="Student" Multiplicity="1" />
+        </Association>
+        <Association Name="RegisteredCourse">
+          <End Type="DistanceLearning.Registered" Role="Registered" Multiplicity="*" />
+          <End Type="DistanceLearning.Course" Role="Course" Multiplicity="1" />
+        </Association>
+        <Association Name="Teaching_topicCourse">
+          <End Type="DistanceLearning.Teaching_topic" Role="Teaching_topic" Multiplicity="*" />
+          <End Type="DistanceLearning.Course" Role="Course" Multiplicity="1" />
+        </Association>
+        <Association Name="TestCourse">
+          <End Type="DistanceLearning.Test" Role="Test" Multiplicity="*" />
+          <End Type="DistanceLearning.Course" Role="Course" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Consists_of">
+          <Key>
+            <PropertyRef Name="Id_Consists_of" />
+          </Key>
+          <Property Name="Id_Consists_of" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Test" Relationship="DistanceLearning.Consists_ofTest" FromRole="Consists_of" ToRole="Test" />
+          <NavigationProperty Name="Question" Relationship="DistanceLearning.QuestionConsists_of" FromRole="Consists_of" ToRole="Question" />
+          <Property Name="QuestionId_Question" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="Id_Question" />
+          </Key>
+          <Property Name="Id_Question" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tekst" Type="String" Nullable="false" />
+          <Property Name="Level" Type="DistanceLearning.QuestionLevel" Nullable="false" />
+          <Property Name="Total_points" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Consists_of" Relationship="DistanceLearning.QuestionConsists_of" FromRole="Question" ToRole="Consists_of" />
+          <NavigationProperty Name="Answers" Relationship="DistanceLearning.QuestionAnswers" FromRole="Question" ToRole="Answers" />
+        </EntityType>
+        <EnumType Name="QuestionLevel">
+          <Member Name="Low" Value="1" />
+          <Member Name="Middle" Value="2" />
+          <Member Name="High" Value="3" />
+        </EnumType>
+        <EntityType Name="Answers">
+          <Key>
+            <PropertyRef Name="Id_Answers" />
+          </Key>
+          <Property Name="Id_Answers" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tekst" Type="String" Nullable="false" />
+          <Property Name="Correct" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Question" Relationship="DistanceLearning.QuestionAnswers" FromRole="Answers" ToRole="Question" />
+        </EntityType>
+        <EntityType Name="Takes">
+          <Key>
+            <PropertyRef Name="Id_Takes" />
+          </Key>
+          <Property Name="Id_Takes" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Won_points" Type="Int32" Nullable="false" />
+          <Property Name="Start_time" Type="DateTime" Nullable="false" />
+          <Property Name="Completion_time" Type="DateTime" Nullable="false" />
+          <Property Name="Date_of_taking" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Test" Relationship="DistanceLearning.TakesTest" FromRole="Takes" ToRole="Test" />
+          <NavigationProperty Name="Registered" Relationship="DistanceLearning.TakesRegistered" FromRole="Takes" ToRole="Registered" />
+          <NavigationProperty Name="Marks" Relationship="DistanceLearning.MarkTakes" FromRole="Takes" ToRole="Mark" />
+        </EntityType>
+        <EntityType Name="Mark">
+          <Key>
+            <PropertyRef Name="Id_Mark" />
+          </Key>
+          <Property Name="Id_Mark" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description_of_mark" Type="String" Nullable="false" />
+          <Property Name="Value_of_Mark" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Take" Relationship="DistanceLearning.MarkTakes" FromRole="Mark" ToRole="Takes" />
+        </EntityType>
+        <Association Name="TakesTest">
+          <End Type="DistanceLearning.Takes" Role="Takes" Multiplicity="*" />
+          <End Type="DistanceLearning.Test" Role="Test" Multiplicity="1" />
+        </Association>
+        <Association Name="Consists_ofTest">
+          <End Type="DistanceLearning.Consists_of" Role="Consists_of" Multiplicity="*" />
+          <End Type="DistanceLearning.Test" Role="Test" Multiplicity="1" />
+        </Association>
+        <Association Name="QuestionConsists_of">
+          <End Type="DistanceLearning.Question" Role="Question" Multiplicity="1" />
+          <End Type="DistanceLearning.Consists_of" Role="Consists_of" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question">
+              <PropertyRef Name="Id_Question" />
+            </Principal>
+            <Dependent Role="Consists_of">
+              <PropertyRef Name="QuestionId_Question" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="QuestionAnswers">
+          <End Type="DistanceLearning.Answers" Role="Answers" Multiplicity="*" />
+          <End Type="DistanceLearning.Question" Role="Question" Multiplicity="1" />
+        </Association>
+        <Association Name="TakesRegistered">
+          <End Type="DistanceLearning.Takes" Role="Takes" Multiplicity="*" />
+          <End Type="DistanceLearning.Registered" Role="Registered" Multiplicity="1" />
+        </Association>
+        <Association Name="MarkTakes">
+          <End Type="DistanceLearning.Mark" Role="Mark" Multiplicity="*" />
+          <End Type="DistanceLearning.Takes" Role="Takes" Multiplicity="1" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
