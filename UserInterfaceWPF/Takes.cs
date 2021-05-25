@@ -14,12 +14,6 @@ namespace UserInterfaceWPF
     
     public partial class Takes
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Takes()
-        {
-            this.Marks = new HashSet<Mark>();
-        }
-    
         public int Id_Takes { get; set; }
         public int Won_points { get; set; }
         public System.DateTime Start_time { get; set; }
@@ -28,7 +22,6 @@ namespace UserInterfaceWPF
     
         public virtual Test Test { get; set; }
         public virtual Registered Registered { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Mark> Marks { get; set; }
+        public virtual Mark Marks { get; set; }
     }
 }

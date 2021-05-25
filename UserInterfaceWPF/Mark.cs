@@ -14,10 +14,17 @@ namespace UserInterfaceWPF
     
     public partial class Mark
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Mark()
+        {
+            this.Take = new HashSet<Takes>();
+        }
+    
         public int Id_Mark { get; set; }
         public string Description_of_mark { get; set; }
         public int Value_of_Mark { get; set; }
     
-        public virtual Takes Take { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Takes> Take { get; set; }
     }
 }

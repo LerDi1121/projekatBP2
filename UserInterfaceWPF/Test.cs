@@ -18,7 +18,7 @@ namespace UserInterfaceWPF
         public Test()
         {
             this.Takes = new HashSet<Takes>();
-            this.Consists_of = new HashSet<Consists_of>();
+            this.Questions = new HashSet<Question>();
         }
     
         public int Id_Test { get; set; }
@@ -29,6 +29,6 @@ namespace UserInterfaceWPF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Takes> Takes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Consists_of> Consists_of { get; set; }
+        public virtual ICollection<Question> Questions { get; set; }
     }
 }

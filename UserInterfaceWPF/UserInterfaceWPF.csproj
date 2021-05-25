@@ -65,60 +65,82 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Answers.cs">
-      <DependentUpon>ModelTest.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Consists_of.cs">
-      <DependentUpon>ModelTest.tt</DependentUpon>
+      <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
     <Compile Include="Course.cs">
-      <DependentUpon>ModelTest.tt</DependentUpon>
+      <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
     <Compile Include="CourseStatus.cs">
-      <DependentUpon>ModelTest.tt</DependentUpon>
+      <DependentUpon>ModelTest21.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase2DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataBase2DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DistanceLearning.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DistanceLearning.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DistanceLearning.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DistanceLearning.tt</DependentUpon>
     </Compile>
     <Compile Include="Mark.cs">
-      <DependentUpon>ModelTest.tt</DependentUpon>
+      <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
     <Compile Include="Message.cs">
-      <DependentUpon>ModelTest.tt</DependentUpon>
+      <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelTest.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelTest.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelTest21.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelTest21.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTest21.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelTest21.tt</DependentUpon>
+    </Compile>
     <Compile Include="Question.cs">
-      <DependentUpon>ModelTest.tt</DependentUpon>
+      <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
     <Compile Include="QuestionLevel.cs">
-      <DependentUpon>ModelTest.tt</DependentUpon>
+      <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
     <Compile Include="Receive.cs">
-      <DependentUpon>ModelTest.tt</DependentUpon>
+      <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
     <Compile Include="Registered.cs">
-      <DependentUpon>ModelTest.tt</DependentUpon>
+      <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
     <Compile Include="Role.cs">
-      <DependentUpon>ModelTest.tt</DependentUpon>
+      <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
     <Compile Include="Student.cs">
-      <DependentUpon>ModelTest.tt</DependentUpon>
+      <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
     <Compile Include="Takes.cs">
-      <DependentUpon>ModelTest.tt</DependentUpon>
+      <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
     <Compile Include="Teacher.cs">
-      <DependentUpon>ModelTest.tt</DependentUpon>
+      <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
     <Compile Include="Teaching_topic.cs">
-      <DependentUpon>ModelTest.tt</DependentUpon>
+      <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
     <Compile Include="Test.cs">
-      <DependentUpon>ModelTest.tt</DependentUpon>
+      <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>ModelTest.tt</DependentUpon>
+      <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -165,6 +187,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DistanceLearning.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="DataBase2DataSet.xsc">
+      <DependentUpon>DataBase2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataBase2DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataBase2DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataBase2DataSet.xss">
+      <DependentUpon>DataBase2DataSet.xsd</DependentUpon>
+    </None>
     <None Include="DistanceLearning.edmx.diagram">
       <DependentUpon>DistanceLearning.edmx</DependentUpon>
     </None>
@@ -178,6 +211,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DistanceLearning.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DistanceLearning.Context.cs</LastGenOutput>
+      <DependentUpon>DistanceLearning.edmx</DependentUpon>
+    </Content>
+    <Content Include="DistanceLearning.edmx.sql" />
+    <Content Include="DistanceLearning.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DistanceLearning.cs</LastGenOutput>
+      <DependentUpon>DistanceLearning.edmx</DependentUpon>
+    </Content>
     <Content Include="ModelTest.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModelTest.Context.cs</LastGenOutput>
@@ -188,9 +235,16 @@
       <LastGenOutput>ModelTest.cs</LastGenOutput>
       <DependentUpon>DistanceLearning.edmx</DependentUpon>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="ModelTest21.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelTest21.Context.cs</LastGenOutput>
+      <DependentUpon>DistanceLearning.edmx</DependentUpon>
+    </Content>
+    <Content Include="ModelTest21.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelTest21.cs</LastGenOutput>
+      <DependentUpon>DistanceLearning.edmx</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

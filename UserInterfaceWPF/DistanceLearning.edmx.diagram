@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="93fa8e38d4454ebf9a63c71bec00d2d3" Name="Diagram1" ZoomLevel="108" >
+      <Diagram DiagramId="93fa8e38d4454ebf9a63c71bec00d2d3" Name="Diagram1" ZoomLevel="93" >
         <EntityTypeShape EntityType="DistanceLearning.Message" Width="1.5" PointX="1.625" PointY="2.125" />
         <EntityTypeShape EntityType="DistanceLearning.Receive" Width="1.875" PointX="4.125" PointY="2" />
         <EntityTypeShape EntityType="DistanceLearning.User" Width="1.5" PointX="7.5" PointY="1.875" />
@@ -14,27 +14,25 @@
         <InheritanceConnector EntityType="DistanceLearning.Student" />
         <AssociationConnector Association="DistanceLearning.ReceiveUser" />
         <AssociationConnector Association="DistanceLearning.MessageReceive" />
-        <AssociationConnector Association="DistanceLearning.UserMessage" />
-        <EntityTypeShape EntityType="DistanceLearning.Course" Width="1.5" PointX="5.25" PointY="8.25" />
-        <AssociationConnector Association="DistanceLearning.CourseTeacher" />
+        <AssociationConnector Association="DistanceLearning.Sends" />
+        <EntityTypeShape EntityType="DistanceLearning.Course" Width="1.5" PointX="6.625" PointY="8.625" />
+        <AssociationConnector Association="DistanceLearning.Creates" />
         <EntityTypeShape EntityType="DistanceLearning.Registered" Width="1.5" PointX="9.375" PointY="8.375" />
-        <EntityTypeShape EntityType="DistanceLearning.Teaching_topic" Width="1.5" PointX="2.875" PointY="11" />
+        <EntityTypeShape EntityType="DistanceLearning.Teaching_topic" Width="1.5" PointX="3" PointY="9.875" />
         <EntityTypeShape EntityType="DistanceLearning.Test" Width="1.5" PointX="6.125" PointY="12" />
         <AssociationConnector Association="DistanceLearning.RegisteredStudent" />
         <AssociationConnector Association="DistanceLearning.RegisteredCourse" />
-        <AssociationConnector Association="DistanceLearning.Teaching_topicCourse" />
+        <AssociationConnector Association="DistanceLearning.Contains" />
         <AssociationConnector Association="DistanceLearning.TestCourse" />
-        <EntityTypeShape EntityType="DistanceLearning.Consists_of" Width="1.5" PointX="6.25" PointY="14.875" />
-        <EntityTypeShape EntityType="DistanceLearning.Question" Width="1.5" PointX="6.25" PointY="17.375" />
-        <EntityTypeShape EntityType="DistanceLearning.Answers" Width="1.5" PointX="6.5" PointY="20.75" />
+        <EntityTypeShape EntityType="DistanceLearning.Question" Width="1.5" PointX="6.25" PointY="15" />
+        <EntityTypeShape EntityType="DistanceLearning.Answers" Width="1.5" PointX="6.125" PointY="18.25" />
         <EntityTypeShape EntityType="DistanceLearning.Takes" Width="1.5" PointX="9.875" PointY="12.125" />
         <EntityTypeShape EntityType="DistanceLearning.Mark" Width="1.5" PointX="9.875" PointY="15.5" />
         <AssociationConnector Association="DistanceLearning.TakesTest" />
-        <AssociationConnector Association="DistanceLearning.Consists_ofTest" />
-        <AssociationConnector Association="DistanceLearning.QuestionConsists_of" />
-        <AssociationConnector Association="DistanceLearning.QuestionAnswers" />
+        <AssociationConnector Association="DistanceLearning.HasTheAnswer" />
         <AssociationConnector Association="DistanceLearning.TakesRegistered" />
-        <AssociationConnector Association="DistanceLearning.MarkTakes" />
+        <AssociationConnector Association="DistanceLearning.GetsAGrade" />
+        <AssociationConnector Association="DistanceLearning.ConsistsOf" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
