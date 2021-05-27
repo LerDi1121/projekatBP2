@@ -15,13 +15,16 @@ namespace UserInterfaceWPF
     
     public partial class DistanceLearningContainer : DbContext
     {
+        public readonly string DbConnectionString;
         public DistanceLearningContainer()
             : base("name=DistanceLearningContainer")
         {
+            DbConnectionString = "name=DistanceLearningContainer";
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+         
             throw new UnintentionalCodeFirstException();
         }
     

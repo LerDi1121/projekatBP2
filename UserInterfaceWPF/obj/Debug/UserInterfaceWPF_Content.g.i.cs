@@ -11,8 +11,6 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("distancelearning.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("distancelearning.edmx.sql")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("distancelearning.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("modeltest.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("modeltest.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("modeltest21.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("modeltest21.tt")]
 
