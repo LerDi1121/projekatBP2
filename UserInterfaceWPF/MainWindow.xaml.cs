@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using UserInterfaceWPF.ModelRepository;
+using UserInterfaceWPF.Repository;
 
 namespace UserInterfaceWPF
 {
@@ -25,18 +26,21 @@ namespace UserInterfaceWPF
         {
             DistanceLearningContainer container = new DistanceLearningContainer();
             InitializeComponent();
-            var initUser = new User()
+            var initTeach = new Teacher()
             {
-                Username = "proba",
-                Surname = "probaPrezime",
-                Name = "proba ime",
-                Role = Role.Student,
+                Username = "Nastavniik1",
+                Surname = "birovljv",
+                Name = "vlada",
+                Role = Role.Teacher,
                 eMail = "neki@Mail",
-                Password = "prona123"
+                Password = "vlada123",
+                Title = "dip inz racunarstva i automatike",
+                Proession = "Nastavnik informatike"
             };
-            UserRepository repo = new UserRepository(container);
-            repo.Add(initUser);
-            repo.Save();
+            UnitOfWork repo = new UnitOfWork(container);
+            repo.TeacherRepository.Add(initTeach);
+            repo.TeacherRepository.Save();
+            ;
         }
     }
 }

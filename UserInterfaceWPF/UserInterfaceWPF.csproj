@@ -133,7 +133,9 @@
       <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
     <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\IUnitOfWork.cs" />
     <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\UnitOfWork.cs" />
     <Compile Include="Role.cs">
       <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
