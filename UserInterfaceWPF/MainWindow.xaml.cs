@@ -12,8 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UserInterfaceWPF.Controllers;
 using UserInterfaceWPF.ModelRepository;
 using UserInterfaceWPF.Repository;
+using UserInterfaceWPF.TransferModels;
 
 namespace UserInterfaceWPF
 {
@@ -24,23 +26,51 @@ namespace UserInterfaceWPF
     {
         public MainWindow()
         {
-            DistanceLearningContainer container = new DistanceLearningContainer();
+            
             InitializeComponent();
-            var initTeach = new Teacher()
+         
+          
+
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            errormessage.Text = "";
+
+            if (passwordBox1.Password.Length == 0)
             {
-                Username = "Nastavniik1",
-                Surname = "birovljv",
-                Name = "vlada",
-                Role = Role.Teacher,
-                eMail = "neki@Mail",
-                Password = "vlada123",
-                Title = "dip inz racunarstva i automatike",
-                Proession = "Nastavnik informatike"
+                errormessage.Text = "Enter an password.";
+                passwordBox1.Focus();
+            }
+            if (textBoxUsername.Text.Length == 0)
+            {
+                errormessage.Text += " Enter an email.";
+                textBoxUsername.Focus();
+            }
+            LoginModel data = new LoginModel()
+            {
+                username = textBoxUsername.Text,
+                password = passwordBox1.Password
             };
-            UnitOfWork repo = new UnitOfWork(container);
-            repo.TeacherRepository.Add(initTeach);
-            repo.TeacherRepository.Save();
-            ;
+            User user = UserController.LogIn(data);
+            if(user==null)
+                errormessage.Text += " Error";
+            else if(user.Role == Role.Student)
+            {
+                StudentWindow win = new StudentWindow();
+                this.Hide();
+                win.Owner = Window.GetWindow(this);
+                win.ShowDialog();
+       
+            }
+            else if(user.Role==Role.Teacher)
+            {
+                TeacherWindow win = new TeacherWindow();
+                win.Owner = Window.GetWindow(this);
+                this.Hide();
+
+                win.ShowDialog();
+            }
         }
     }
 }

@@ -67,6 +67,8 @@
     <Compile Include="Answers.cs">
       <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
+    <Compile Include="BindableBase.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Course.cs">
       <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
@@ -142,11 +144,35 @@
     <Compile Include="Student.cs">
       <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
+    <Compile Include="StudentWindow.xaml.cs">
+      <DependentUpon>StudentWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Takes.cs">
       <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
     <Compile Include="Teacher.cs">
       <DependentUpon>ModelTest21.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViewModel\CourseViewModel.cs" />
+    <Compile Include="TeacherViewModel\MessageViewModel.cs" />
+    <Compile Include="TeacherViewModel\MyICommand.cs" />
+    <Compile Include="TeacherViewModel\ProfileViewModel.cs" />
+    <Compile Include="TeacherViewModel\TestViewModel.cs" />
+    <Compile Include="TeacherViews\MessageView.xaml.cs">
+      <DependentUpon>MessageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\ProfileView.xaml.cs">
+      <DependentUpon>ProfileView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\TestView.xaml.cs">
+      <DependentUpon>TestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherWindowViewModel.cs" />
+    <Compile Include="TeacherViews\CourseView.xaml.cs">
+      <DependentUpon>CourseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherWindow.xaml.cs">
+      <DependentUpon>TeacherWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Teaching_topic.cs">
       <DependentUpon>ModelTest21.tt</DependentUpon>
@@ -154,9 +180,11 @@
     <Compile Include="Test.cs">
       <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
+    <Compile Include="TransferModels\LoginModel.cs" />
     <Compile Include="User.cs">
       <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -174,6 +202,30 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="StudentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TeacherViews\CourseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TeacherViews\MessageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TeacherViews\ProfileView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TeacherViews\TestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TeacherWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -235,5 +287,6 @@
       <DependentUpon>DistanceLearning.edmx</DependentUpon>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

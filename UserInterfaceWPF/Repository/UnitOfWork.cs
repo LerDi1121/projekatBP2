@@ -10,9 +10,10 @@ namespace UserInterfaceWPF.Repository
     class UnitOfWork: IUnitOfWork
     {
         private readonly DistanceLearningContainer context;
-        public UnitOfWork(DistanceLearningContainer context)
+        public UnitOfWork()
         {
-            this.context = context;
+            this.context = new DistanceLearningContainer();
+            
             AnswersRepository = new AnswersRepository(this.context);
             CourseRepository = new CourseRepository(this.context);
             MarkRepository = new MarkRepository(this.context);

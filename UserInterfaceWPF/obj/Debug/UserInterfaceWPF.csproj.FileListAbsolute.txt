@@ -1,6 +1,10 @@
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\MainWindow.g.cs
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\StudentWindow.g.cs
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\CourseView.g.cs
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherWindow.g.cs
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\App.g.cs
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterfaceWPF_Content.g.cs
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterfaceWPF_MarkupCompile.cache
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterfaceWPF_MarkupCompile.lref
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\bin\Debug\UserInterfaceWPF.exe.config
@@ -11,6 +15,9 @@ C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\bin\Debug\EntityFramewo
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\bin\Debug\EntityFramework.xml
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\MainWindow.baml
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\StudentWindow.baml
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\CourseView.baml
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherWindow.baml
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterfaceWPF.g.resources
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterfaceWPF.Properties.Resources.resources
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterfaceWPF.csproj.GenerateResource.cache
@@ -19,3 +26,9 @@ C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterface
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterfaceWPF.exe
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterfaceWPF.pdb
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterfaceWPF.csprojAssemblyReference.cache
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\TestView.g.cs
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\TestView.baml
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\MessageView.g.cs
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\MessageView.baml
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\ProfileView.g.cs
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\ProfileView.baml
