@@ -25,10 +25,12 @@ C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterface
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterfaceWPF.csproj.CopyComplete
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterfaceWPF.exe
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterfaceWPF.pdb
-C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterfaceWPF.csprojAssemblyReference.cache
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\TestView.g.cs
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\TestView.baml
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\MessageView.g.cs
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\MessageView.baml
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\ProfileView.g.cs
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\ProfileView.baml
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\NewMessage.g.cs
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\NewMessage.baml
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterfaceWPF.csprojAssemblyReference.cache

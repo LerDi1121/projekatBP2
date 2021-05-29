@@ -26,5 +26,17 @@ namespace UserInterfaceWPF.Controllers
             }
             return retVal;
         }
+        static public HashSet<string> getAllUsername()
+        {
+            HashSet<string> retVal = new HashSet<string>() ;
+            UnitOfWork repo = new UnitOfWork();
+            var temp = repo.UserRepository.GetAll();
+            foreach( User  u in temp)
+            {
+                retVal.Add(u.Username);
+            }
+            return retVal;
+
+        }
     }
 }

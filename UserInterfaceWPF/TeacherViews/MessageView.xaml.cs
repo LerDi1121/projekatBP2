@@ -26,5 +26,12 @@ namespace UserInterfaceWPF.TeacherViews
             InitializeComponent();
             this.DataContext = new MessageViewModel();
         }
+
+        private void btnNewMesage_Click(object sender, RoutedEventArgs e)
+        {
+            NewMessage newMess = new NewMessage();
+            newMess.Show();
+
+        }
     }
 }

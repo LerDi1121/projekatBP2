@@ -68,6 +68,7 @@
       <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
     <Compile Include="BindableBase.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Course.cs">
       <DependentUpon>ModelTest21.tt</DependentUpon>
@@ -121,6 +122,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelTest21.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewMessage.xaml.cs">
+      <DependentUpon>NewMessage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Question.cs">
       <DependentUpon>ModelTest21.tt</DependentUpon>
@@ -181,6 +185,7 @@
       <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
     <Compile Include="TransferModels\LoginModel.cs" />
+    <Compile Include="TransferModels\MessageToSend.cs" />
     <Compile Include="User.cs">
       <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
@@ -202,6 +207,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NewMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StudentWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

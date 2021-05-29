@@ -6,7 +6,35 @@
              xmlns:local="clr-namespace:UserInterfaceWPF.TeacherViews"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Label Content="poruke"></Label>
+    <Grid Background="#B8FFF3">
+        <StackPanel  Orientation="Vertical">
+        <Label Content="Messages " FontSize="20" FontStyle="Oblique"  FontWeight="Bold" Width="600" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+
+        <StackPanel Orientation="Horizontal">
+                <TextBlock Text="   " FontSize="25"/>
+                <Button x:Name="btnNewMesage" Height="40"  Content="New Message" FontSize="20" Width="157" Click="btnNewMesage_Click"/>
+                <TextBlock Text="   " FontSize="25"/>
+                <Button x:Name="btnAll" Height="40"  Content="All" FontSize="20" Width="70" />
+                <TextBlock Text="   " FontSize="25"/>
+                <Button x:Name="btnToMe" Height="40"  Content="To Me" FontSize="20" Width="90" />
+                <TextBlock Text="   " FontSize="25"/>
+                <Button x:Name="btnForMe" Height="40"  Content="For Me" FontSize="20" Width="90" />
+                <TextBlock Text="   " FontSize="25"/>
+                <Button x:Name="btnDelete" Height="40"  Content="Delete Selected Message" FontSize="20" Width="252" Command="{Binding DeleteCommand}" />
+
+
+            </StackPanel>
+            <Separator Height="10"/>
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Path=Message, UpdateSourceTrigger=PropertyChanged}"  SelectedItem="{Binding SelectedMessage}" CanUserAddRows="False" Height="220" Width="750">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="From " Binding="{Binding Id}" Width="150" />
+                    <DataGridTextColumn Header="To" Binding="{Binding Name}" Width="150" />
+                    <DataGridTextColumn Header="Title" Binding="{Binding Value, UpdateSourceTrigger=PropertyChanged}" Width="150" />
+                    
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+
     </Grid>
 </UserControl>

@@ -22,8 +22,11 @@ namespace UserInterfaceWPF
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    
     public partial class MainWindow : Window
     {
+        public static User CurrentUser;
+
         public MainWindow()
         {
             
@@ -55,8 +58,10 @@ namespace UserInterfaceWPF
             User user = UserController.LogIn(data);
             if(user==null)
                 errormessage.Text += " Error";
+           
             else if(user.Role == Role.Student)
             {
+                CurrentUser = user;
                 StudentWindow win = new StudentWindow();
                 this.Hide();
                 win.Owner = Window.GetWindow(this);
@@ -65,6 +70,7 @@ namespace UserInterfaceWPF
             }
             else if(user.Role==Role.Teacher)
             {
+                CurrentUser = user;
                 TeacherWindow win = new TeacherWindow();
                 win.Owner = Window.GetWindow(this);
                 this.Hide();
