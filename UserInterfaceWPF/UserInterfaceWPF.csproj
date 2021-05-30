@@ -123,9 +123,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
-    <Compile Include="NewMessage.xaml.cs">
-      <DependentUpon>NewMessage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Question.cs">
       <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
@@ -160,10 +157,14 @@
     <Compile Include="TeacherViewModel\CourseViewModel.cs" />
     <Compile Include="TeacherViewModel\MessageViewModel.cs" />
     <Compile Include="TeacherViewModel\MyICommand.cs" />
+    <Compile Include="TeacherViewModel\NewMessageViewModel.cs" />
     <Compile Include="TeacherViewModel\ProfileViewModel.cs" />
     <Compile Include="TeacherViewModel\TestViewModel.cs" />
     <Compile Include="TeacherViews\MessageView.xaml.cs">
       <DependentUpon>MessageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\NewMessageView.xaml.cs">
+      <DependentUpon>NewMessageView.xaml</DependentUpon>
     </Compile>
     <Compile Include="TeacherViews\ProfileView.xaml.cs">
       <DependentUpon>ProfileView.xaml</DependentUpon>
@@ -207,10 +208,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="NewMessage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="StudentWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -220,6 +217,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TeacherViews\MessageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TeacherViews\NewMessageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

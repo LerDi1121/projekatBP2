@@ -8,7 +8,7 @@ using UserInterfaceWPF.Repository;
 
 namespace UserInterfaceWPF.ModelRepository
 {
-    class QuestionRepository:Repository<Question,int>,IQuestionRepository
+    public class QuestionRepository:Repository<Question,int>,IQuestionRepository
     {
         public QuestionRepository(DistanceLearningContainer context):base (context)
         {

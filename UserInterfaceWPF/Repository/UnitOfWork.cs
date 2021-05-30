@@ -7,9 +7,9 @@ using UserInterfaceWPF.ModelRepository;
 
 namespace UserInterfaceWPF.Repository
 {
-    class UnitOfWork: IUnitOfWork
+    public class UnitOfWork: IUnitOfWork
     {
-        private readonly DistanceLearningContainer context;
+        public readonly DistanceLearningContainer context;
         public UnitOfWork()
         {
             this.context = new DistanceLearningContainer();
@@ -54,6 +54,10 @@ namespace UserInterfaceWPF.Repository
         public TestRepository TestRepository { get; set; }
 
         public UserRepository UserRepository { get; set; }
+        ~UnitOfWork()
+        {
+            context.Dispose();
+        }
         #endregion
         public void Dispose()
         {

@@ -8,7 +8,7 @@ using UserInterfaceWPF.Repository;
 
 namespace UserInterfaceWPF.ModelRepository
 {
-    class MarkRepository:Repository<Mark,int>,IMarkRepository   
+   public class MarkRepository:Repository<Mark,int>,IMarkRepository   
     {
         public MarkRepository(DistanceLearningContainer context):base(context)
         {

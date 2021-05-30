@@ -8,7 +8,7 @@ using UserInterfaceWPF.Repository;
 
 namespace UserInterfaceWPF.ModelRepository
 {
-    class ReceiveRepository:Repository<Receive,int>, IReceiveRepository
+    public class ReceiveRepository:Repository<Receive,int>, IReceiveRepository
     {
         public ReceiveRepository(DistanceLearningContainer context):base (context)
         {

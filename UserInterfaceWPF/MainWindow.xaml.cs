@@ -26,10 +26,11 @@ namespace UserInterfaceWPF
     public partial class MainWindow : Window
     {
         public static User CurrentUser;
-
+        public static UnitOfWork UnitOfWork_ = new UnitOfWork();
+       
         public MainWindow()
         {
-            
+          
             InitializeComponent();
          
           

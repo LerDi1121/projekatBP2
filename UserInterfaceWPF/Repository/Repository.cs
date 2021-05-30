@@ -60,7 +60,11 @@ namespace UserInterfaceWPF.Repository
             context.Entry(entity).State = EntityState.Modified;
             context.SaveChanges();*/
         }
-      
+        /*public DistanceLearningContainer BeginTransaction()
+        {
+          //  return context.Database.BeginTransaction();
+        }*/
+
         ~ Repository()
         {
             context.Dispose();

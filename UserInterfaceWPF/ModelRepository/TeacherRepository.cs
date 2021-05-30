@@ -8,7 +8,7 @@ using UserInterfaceWPF.Repository;
 
 namespace UserInterfaceWPF.ModelRepository
 {
-    class TeacherRepository : Repository<Teacher, int>, ITeacherRpository
+    public class TeacherRepository : Repository<Teacher, int>, ITeacherRpository
     {
         public TeacherRepository(DistanceLearningContainer context) : base(context)
         {

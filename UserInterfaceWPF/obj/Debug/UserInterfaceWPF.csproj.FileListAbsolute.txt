@@ -31,6 +31,6 @@ C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\MessageView.baml
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\ProfileView.g.cs
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\ProfileView.baml
-C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\NewMessage.g.cs
-C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\NewMessage.baml
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\NewMessageView.g.cs
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\NewMessageView.baml
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterfaceWPF.csprojAssemblyReference.cache

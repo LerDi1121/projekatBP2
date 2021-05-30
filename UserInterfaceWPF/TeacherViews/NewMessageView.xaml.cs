@@ -17,21 +17,14 @@ using UserInterfaceWPF.TeacherViewModel;
 namespace UserInterfaceWPF.TeacherViews
 {
     /// <summary>
-    /// Interaction logic for MessageView.xaml
+    /// Interaction logic for NewMessage.xaml
     /// </summary>
-    public partial class MessageView : UserControl
+    public partial class NewMessageView : UserControl
     {
-        public MessageView()
+        public NewMessageView()
         {
             InitializeComponent();
-            this.DataContext = new MessageViewModel();
-        }
-
-        private void btnNewMesage_Click(object sender, RoutedEventArgs e)
-        {
-           /* NewMessage newMess = new NewMessage();
-            newMess.Show();*/
-
+            this.DataContext = new NewMessageViewModel();
         }
     }
 }

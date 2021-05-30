@@ -8,7 +8,7 @@ using UserInterfaceWPF.Repository;
 
 namespace UserInterfaceWPF.ModelRepository
 {
-    class RegisteredRepository: Repository<Registered, int>, IRegisteredRepository
+    public class RegisteredRepository: Repository<Registered, int>, IRegisteredRepository
     {
         public RegisteredRepository(DistanceLearningContainer context):base(context)
         {
