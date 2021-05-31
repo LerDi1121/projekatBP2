@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DistanceLearningStoreContainer" CdmEntityContainer="DistanceLearningContainer">
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="IsTypeOf(DistanceLearning.Message)">
+        <MappingFragment StoreEntitySet="Messages">
+          <ScalarProperty Name="Id_Message" ColumnName="Id_Message" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Posting_date" ColumnName="Posting_date" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Receives">
+      <EntityTypeMapping TypeName="IsTypeOf(DistanceLearning.Receive)">
+        <MappingFragment StoreEntitySet="Receives">
+          <ScalarProperty Name="Id_Receives" ColumnName="Id_Receives" />
+          <ScalarProperty Name="Date_of_deletion" ColumnName="Date_of_deletion" />
+          <ScalarProperty Name="Date_of_reading" ColumnName="Date_of_reading" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(DistanceLearning.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(DistanceLearning.Teacher)">
+        <MappingFragment StoreEntitySet="Users_Teacher">
+          <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+          <ScalarProperty Name="Id_Teacher" ColumnName="Id_Teacher" />
+          <ScalarProperty Name="Proession" ColumnName="Proession" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(DistanceLearning.Student)">
+        <MappingFragment StoreEntitySet="Users_Student">
+          <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+          <ScalarProperty Name="Id_Student" ColumnName="Id_Student" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="IsTypeOf(DistanceLearning.Course)">
+        <MappingFragment StoreEntitySet="Courses">
+          <ScalarProperty Name="Id_Course" ColumnName="Id_Course" />
+          <ScalarProperty Name="Course_name" ColumnName="Course_name" />
+          <ScalarProperty Name="Course_status" ColumnName="Course_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registereds">
+      <EntityTypeMapping TypeName="IsTypeOf(DistanceLearning.Registered)">
+        <MappingFragment StoreEntitySet="Registereds">
+          <ScalarProperty Name="Id_Registered" ColumnName="Id_Registered" />
+          <ScalarProperty Name="Application_date" ColumnName="Application_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teaching_topic">
+      <EntityTypeMapping TypeName="IsTypeOf(DistanceLearning.Teaching_topic)">
+        <MappingFragment StoreEntitySet="Teaching_topic">
+          <ScalarProperty Name="Id_Teaching_topic" ColumnName="Id_Teaching_topic" />
+          <ScalarProperty Name="Topic_name" ColumnName="Topic_name" />
+          <ScalarProperty Name="Serial_number" ColumnName="Serial_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Test">
+      <EntityTypeMapping TypeName="IsTypeOf(DistanceLearning.Test)">
+        <MappingFragment StoreEntitySet="Test">
+          <ScalarProperty Name="Id_Test" ColumnName="Id_Test" />
+          <ScalarProperty Name="Test_Name" ColumnName="Test_Name" />
+          <ScalarProperty Name="Points" ColumnName="Points" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questions">
+      <EntityTypeMapping TypeName="IsTypeOf(DistanceLearning.Question)">
+        <MappingFragment StoreEntitySet="Questions">
+          <ScalarProperty Name="Id_Question" ColumnName="Id_Question" />
+          <ScalarProperty Name="Tekst" ColumnName="Tekst" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Total_points" ColumnName="Total_points" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Answers">
+      <EntityTypeMapping TypeName="IsTypeOf(DistanceLearning.Answers)">
+        <MappingFragment StoreEntitySet="Answers">
+          <ScalarProperty Name="Id_Answers" ColumnName="Id_Answers" />
+          <ScalarProperty Name="Tekst" ColumnName="Tekst" />
+          <ScalarProperty Name="Correct" ColumnName="Correct" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Takes">
+      <EntityTypeMapping TypeName="IsTypeOf(DistanceLearning.Takes)">
+        <MappingFragment StoreEntitySet="Takes">
+          <ScalarProperty Name="Id_Takes" ColumnName="Id_Takes" />
+          <ScalarProperty Name="Won_points" ColumnName="Won_points" />
+          <ScalarProperty Name="Start_time" ColumnName="Start_time" />
+          <ScalarProperty Name="Completion_time" ColumnName="Completion_time" />
+          <ScalarProperty Name="Date_of_taking" ColumnName="Date_of_taking" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mark">
+      <EntityTypeMapping TypeName="IsTypeOf(DistanceLearning.Mark)">
+        <MappingFragment StoreEntitySet="Mark">
+          <ScalarProperty Name="Id_Mark" ColumnName="Id_Mark" />
+          <ScalarProperty Name="Description_of_mark" ColumnName="Description_of_mark" />
+          <ScalarProperty Name="Value_of_Mark" ColumnName="Value_of_Mark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ReceiveUser" TypeName="DistanceLearning.ReceiveUser" StoreEntitySet="Receives">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id_User" ColumnName="Users_Id_User" />
+      </EndProperty>
+      <EndProperty Name="Receive">
+        <ScalarProperty Name="Id_Receives" ColumnName="Id_Receives" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MessageReceive" TypeName="DistanceLearning.MessageReceive" StoreEntitySet="Receives">
+      <EndProperty Name="Message">
+        <ScalarProperty Name="Id_Message" ColumnName="Messages_Id_Message" />
+      </EndProperty>
+      <EndProperty Name="Receive">
+        <ScalarProperty Name="Id_Receives" ColumnName="Id_Receives" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Sends" TypeName="DistanceLearning.Sends" StoreEntitySet="Messages">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id_User" ColumnName="User_Id_User" />
+      </EndProperty>
+      <EndProperty Name="Message">
+        <ScalarProperty Name="Id_Message" ColumnName="Id_Message" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Creates" TypeName="DistanceLearning.Creates" StoreEntitySet="Courses">
+      <EndProperty Name="Teacher">
+        <ScalarProperty Name="Id_User" ColumnName="Teacher_Id_User" />
+      </EndProperty>
+      <EndProperty Name="Course">
+        <ScalarProperty Name="Id_Course" ColumnName="Id_Course" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RegisteredStudent" TypeName="DistanceLearning.RegisteredStudent" StoreEntitySet="Registereds">
+      <EndProperty Name="Student">
+        <ScalarProperty Name="Id_User" ColumnName="Student_Id_User" />
+      </EndProperty>
+      <EndProperty Name="Registered">
+        <ScalarProperty Name="Id_Registered" ColumnName="Id_Registered" />
+      </EndProperty>
+      <Condition ColumnName="Student_Id_User" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RegisteredCourse" TypeName="DistanceLearning.RegisteredCourse" StoreEntitySet="Registereds">
+      <EndProperty Name="Course">
+        <ScalarProperty Name="Id_Course" ColumnName="Course_Id_Course" />
+      </EndProperty>
+      <EndProperty Name="Registered">
+        <ScalarProperty Name="Id_Registered" ColumnName="Id_Registered" />
+      </EndProperty>
+      <Condition ColumnName="Course_Id_Course" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Contains" TypeName="DistanceLearning.Contains" StoreEntitySet="Teaching_topic">
+      <EndProperty Name="Course">
+        <ScalarProperty Name="Id_Course" ColumnName="Course_Id_Course" />
+      </EndProperty>
+      <EndProperty Name="Teaching_topic">
+        <ScalarProperty Name="Id_Teaching_topic" ColumnName="Id_Teaching_topic" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Has" TypeName="DistanceLearning.TestCourse" StoreEntitySet="Test">
+      <EndProperty Name="Course">
+        <ScalarProperty Name="Id_Course" ColumnName="Course_Id_Course" />
+      </EndProperty>
+      <EndProperty Name="Test">
+        <ScalarProperty Name="Id_Test" ColumnName="Id_Test" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TakesTest" TypeName="DistanceLearning.TakesTest" StoreEntitySet="Takes">
+      <EndProperty Name="Test">
+        <ScalarProperty Name="Id_Test" ColumnName="Test_Id_Test" />
+      </EndProperty>
+      <EndProperty Name="Takes">
+        <ScalarProperty Name="Id_Takes" ColumnName="Id_Takes" />
+      </EndProperty>
+      <Condition ColumnName="Test_Id_Test" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="HasTheAnswer" TypeName="DistanceLearning.HasTheAnswer" StoreEntitySet="Answers">
+      <EndProperty Name="Question">
+        <ScalarProperty Name="Id_Question" ColumnName="Question_Id_Question" />
+      </EndProperty>
+      <EndProperty Name="Answers">
+        <ScalarProperty Name="Id_Answers" ColumnName="Id_Answers" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TakesRegistered" TypeName="DistanceLearning.TakesRegistered" StoreEntitySet="Takes">
+      <EndProperty Name="Registered">
+        <ScalarProperty Name="Id_Registered" ColumnName="Registered_Id_Registered" />
+      </EndProperty>
+      <EndProperty Name="Takes">
+        <ScalarProperty Name="Id_Takes" ColumnName="Id_Takes" />
+      </EndProperty>
+      <Condition ColumnName="Registered_Id_Registered" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="GetsAGrade" TypeName="DistanceLearning.GetsAGrade" StoreEntitySet="Takes">
+      <EndProperty Name="Mark">
+        <ScalarProperty Name="Id_Mark" ColumnName="Marks_Id_Mark" />
+      </EndProperty>
+      <EndProperty Name="Takes">
+        <ScalarProperty Name="Id_Takes" ColumnName="Id_Takes" />
+      </EndProperty>
+      <Condition ColumnName="Marks_Id_Mark" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ConsistsOf" TypeName="DistanceLearning.ConsistsOf" StoreEntitySet="ConsistsOf">
+      <EndProperty Name="Test">
+        <ScalarProperty Name="Id_Test" ColumnName="Tests_Id_Test" />
+      </EndProperty>
+      <EndProperty Name="Question">
+        <ScalarProperty Name="Id_Question" ColumnName="Questions_Id_Question" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

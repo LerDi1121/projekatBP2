@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DistanceLearning.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DistanceLearningStoreContainer">
+    <EntitySet Name="Messages" EntityType="DistanceLearning.Store.Messages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Receives" EntityType="DistanceLearning.Store.Receives" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="DistanceLearning.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Courses" EntityType="DistanceLearning.Store.Courses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Registereds" EntityType="DistanceLearning.Store.Registereds" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Teaching_topic" EntityType="DistanceLearning.Store.Teaching_topic" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Test" EntityType="DistanceLearning.Store.Test" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Questions" EntityType="DistanceLearning.Store.Questions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Answers" EntityType="DistanceLearning.Store.Answers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Takes" EntityType="DistanceLearning.Store.Takes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Mark" EntityType="DistanceLearning.Store.Mark" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users_Teacher" EntityType="DistanceLearning.Store.Users_Teacher" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users_Student" EntityType="DistanceLearning.Store.Users_Student" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ConsistsOf" EntityType="DistanceLearning.Store.ConsistsOf" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ReceiveUser" Association="DistanceLearning.Store.ReceiveUser">
+      <End Role="Receive" EntitySet="Receives" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="MessageReceive" Association="DistanceLearning.Store.MessageReceive">
+      <End Role="Message" EntitySet="Messages" />
+      <End Role="Receive" EntitySet="Receives" />
+    </AssociationSet>
+    <AssociationSet Name="Sends" Association="DistanceLearning.Store.Sends">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Message" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="Creates" Association="DistanceLearning.Store.Creates">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="Teacher" EntitySet="Users_Teacher" />
+    </AssociationSet>
+    <AssociationSet Name="RegisteredStudent" Association="DistanceLearning.Store.RegisteredStudent">
+      <End Role="Registered" EntitySet="Registereds" />
+      <End Role="Student" EntitySet="Users_Student" />
+    </AssociationSet>
+    <AssociationSet Name="RegisteredCourse" Association="DistanceLearning.Store.RegisteredCourse">
+      <End Role="Registered" EntitySet="Registereds" />
+      <End Role="Course" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="Contains" Association="DistanceLearning.Store.Contains">
+      <End Role="Teaching_topic" EntitySet="Teaching_topic" />
+      <End Role="Course" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="Has" Association="DistanceLearning.Store.TestCourse">
+      <End Role="Test" EntitySet="Test" />
+      <End Role="Course" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="TakesTest" Association="DistanceLearning.Store.TakesTest">
+      <End Role="Takes" EntitySet="Takes" />
+      <End Role="Test" EntitySet="Test" />
+    </AssociationSet>
+    <AssociationSet Name="HasTheAnswer" Association="DistanceLearning.Store.HasTheAnswer">
+      <End Role="Answers" EntitySet="Answers" />
+      <End Role="Question" EntitySet="Questions" />
+    </AssociationSet>
+    <AssociationSet Name="TakesRegistered" Association="DistanceLearning.Store.TakesRegistered">
+      <End Role="Takes" EntitySet="Takes" />
+      <End Role="Registered" EntitySet="Registereds" />
+    </AssociationSet>
+    <AssociationSet Name="GetsAGrade" Association="DistanceLearning.Store.GetsAGrade">
+      <End Role="Mark" EntitySet="Mark" />
+      <End Role="Takes" EntitySet="Takes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConsistsOf_Test" Association="DistanceLearning.Store.FK_ConsistsOf_Test">
+      <End Role="Test" EntitySet="Test" />
+      <End Role="ConsistsOf" EntitySet="ConsistsOf" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConsistsOf_Question" Association="DistanceLearning.Store.FK_ConsistsOf_Question">
+      <End Role="Question" EntitySet="Questions" />
+      <End Role="ConsistsOf" EntitySet="ConsistsOf" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teacher_inherits_User" Association="DistanceLearning.Store.FK_Teacher_inherits_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Teacher" EntitySet="Users_Teacher" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_inherits_User" Association="DistanceLearning.Store.FK_Student_inherits_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Student" EntitySet="Users_Student" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="Id_Message" />
+    </Key>
+    <Property Name="Id_Message" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Posting_date" Type="datetime" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="User_Id_User" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Receives">
+    <Key>
+      <PropertyRef Name="Id_Receives" />
+    </Key>
+    <Property Name="Id_Receives" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date_of_deletion" Type="datetime" Nullable="false" />
+    <Property Name="Date_of_reading" Type="datetime" Nullable="false" />
+    <Property Name="Users_Id_User" Type="int" Nullable="false" />
+    <Property Name="Messages_Id_Message" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id_User" />
+    </Key>
+    <Property Name="Id_User" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Role" Type="int" Nullable="false" />
+    <Property Name="eMail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Courses">
+    <Key>
+      <PropertyRef Name="Id_Course" />
+    </Key>
+    <Property Name="Id_Course" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Course_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Course_status" Type="int" Nullable="false" />
+    <Property Name="Teacher_Id_User" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Registereds">
+    <Key>
+      <PropertyRef Name="Id_Registered" />
+    </Key>
+    <Property Name="Id_Registered" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Application_date" Type="datetime" Nullable="false" />
+    <Property Name="Student_Id_User" Type="int" Nullable="true" />
+    <Property Name="Course_Id_Course" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Teaching_topic">
+    <Key>
+      <PropertyRef Name="Id_Teaching_topic" />
+    </Key>
+    <Property Name="Id_Teaching_topic" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Topic_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Serial_number" Type="int" Nullable="false" />
+    <Property Name="Course_Id_Course" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Test">
+    <Key>
+      <PropertyRef Name="Id_Test" />
+    </Key>
+    <Property Name="Id_Test" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Test_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Points" Type="int" Nullable="false" />
+    <Property Name="Course_Id_Course" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Questions">
+    <Key>
+      <PropertyRef Name="Id_Question" />
+    </Key>
+    <Property Name="Id_Question" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tekst" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Level" Type="int" Nullable="false" />
+    <Property Name="Total_points" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Answers">
+    <Key>
+      <PropertyRef Name="Id_Answers" />
+    </Key>
+    <Property Name="Id_Answers" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tekst" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Correct" Type="bit" Nullable="false" />
+    <Property Name="Question_Id_Question" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Takes">
+    <Key>
+      <PropertyRef Name="Id_Takes" />
+    </Key>
+    <Property Name="Id_Takes" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Won_points" Type="int" Nullable="false" />
+    <Property Name="Start_time" Type="datetime" Nullable="false" />
+    <Property Name="Completion_time" Type="datetime" Nullable="false" />
+    <Property Name="Date_of_taking" Type="datetime" Nullable="false" />
+    <Property Name="Test_Id_Test" Type="int" Nullable="true" />
+    <Property Name="Registered_Id_Registered" Type="int" Nullable="true" />
+    <Property Name="Marks_Id_Mark" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Mark">
+    <Key>
+      <PropertyRef Name="Id_Mark" />
+    </Key>
+    <Property Name="Id_Mark" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description_of_mark" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Value_of_Mark" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users_Teacher">
+    <Key>
+      <PropertyRef Name="Id_User" />
+    </Key>
+    <Property Name="Id_Teacher" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Proession" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id_User" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users_Student">
+    <Key>
+      <PropertyRef Name="Id_User" />
+    </Key>
+    <Property Name="Id_Student" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Class" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id_User" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ConsistsOf">
+    <Key>
+      <PropertyRef Name="Tests_Id_Test" />
+      <PropertyRef Name="Questions_Id_Question" />
+    </Key>
+    <Property Name="Tests_Id_Test" Type="int" Nullable="false" />
+    <Property Name="Questions_Id_Question" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="ReceiveUser">
+    <End Role="Receive" Type="DistanceLearning.Store.Receives" Multiplicity="*" />
+    <End Role="User" Type="DistanceLearning.Store.Users" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id_User" />
+      </Principal>
+      <Dependent Role="Receive">
+        <PropertyRef Name="Users_Id_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MessageReceive">
+    <End Role="Message" Type="DistanceLearning.Store.Messages" Multiplicity="1" />
+    <End Role="Receive" Type="DistanceLearning.Store.Receives" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Message">
+        <PropertyRef Name="Id_Message" />
+      </Principal>
+      <Dependent Role="Receive">
+        <PropertyRef Name="Messages_Id_Message" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Sends">
+    <End Role="User" Type="DistanceLearning.Store.Users" Multiplicity="1" />
+    <End Role="Message" Type="DistanceLearning.Store.Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id_User" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="User_Id_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Creates">
+    <End Role="Course" Type="DistanceLearning.Store.Courses" Multiplicity="*" />
+    <End Role="Teacher" Type="DistanceLearning.Store.Users_Teacher" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="Id_User" />
+      </Principal>
+      <Dependent Role="Course">
+        <PropertyRef Name="Teacher_Id_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RegisteredStudent">
+    <End Role="Registered" Type="DistanceLearning.Store.Registereds" Multiplicity="*" />
+    <End Role="Student" Type="DistanceLearning.Store.Users_Student" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Id_User" />
+      </Principal>
+      <Dependent Role="Registered">
+        <PropertyRef Name="Student_Id_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RegisteredCourse">
+    <End Role="Registered" Type="DistanceLearning.Store.Registereds" Multiplicity="*" />
+    <End Role="Course" Type="DistanceLearning.Store.Courses" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="Id_Course" />
+      </Principal>
+      <Dependent Role="Registered">
+        <PropertyRef Name="Course_Id_Course" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Contains">
+    <End Role="Teaching_topic" Type="DistanceLearning.Store.Teaching_topic" Multiplicity="*" />
+    <End Role="Course" Type="DistanceLearning.Store.Courses" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="Id_Course" />
+      </Principal>
+      <Dependent Role="Teaching_topic">
+        <PropertyRef Name="Course_Id_Course" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TestCourse">
+    <End Role="Test" Type="DistanceLearning.Store.Test" Multiplicity="*" />
+    <End Role="Course" Type="DistanceLearning.Store.Courses" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="Id_Course" />
+      </Principal>
+      <Dependent Role="Test">
+        <PropertyRef Name="Course_Id_Course" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TakesTest">
+    <End Role="Takes" Type="DistanceLearning.Store.Takes" Multiplicity="*" />
+    <End Role="Test" Type="DistanceLearning.Store.Test" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Test">
+        <PropertyRef Name="Id_Test" />
+      </Principal>
+      <Dependent Role="Takes">
+        <PropertyRef Name="Test_Id_Test" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HasTheAnswer">
+    <End Role="Answers" Type="DistanceLearning.Store.Answers" Multiplicity="*" />
+    <End Role="Question" Type="DistanceLearning.Store.Questions" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="Id_Question" />
+      </Principal>
+      <Dependent Role="Answers">
+        <PropertyRef Name="Question_Id_Question" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TakesRegistered">
+    <End Role="Takes" Type="DistanceLearning.Store.Takes" Multiplicity="*" />
+    <End Role="Registered" Type="DistanceLearning.Store.Registereds" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Registered">
+        <PropertyRef Name="Id_Registered" />
+      </Principal>
+      <Dependent Role="Takes">
+        <PropertyRef Name="Registered_Id_Registered" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GetsAGrade">
+    <End Role="Mark" Type="DistanceLearning.Store.Mark" Multiplicity="0..1" />
+    <End Role="Takes" Type="DistanceLearning.Store.Takes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mark">
+        <PropertyRef Name="Id_Mark" />
+      </Principal>
+      <Dependent Role="Takes">
+        <PropertyRef Name="Marks_Id_Mark" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConsistsOf_Test">
+    <End Role="Test" Type="DistanceLearning.Store.Test" Multiplicity="1" />
+    <End Role="ConsistsOf" Type="DistanceLearning.Store.ConsistsOf" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Test">
+        <PropertyRef Name="Id_Test" />
+      </Principal>
+      <Dependent Role="ConsistsOf">
+        <PropertyRef Name="Tests_Id_Test" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConsistsOf_Question">
+    <End Role="ConsistsOf" Type="DistanceLearning.Store.ConsistsOf" Multiplicity="*" />
+    <End Role="Question" Type="DistanceLearning.Store.Questions" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="Id_Question" />
+      </Principal>
+      <Dependent Role="ConsistsOf">
+        <PropertyRef Name="Questions_Id_Question" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teacher_inherits_User">
+    <End Role="User" Type="DistanceLearning.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Teacher" Type="DistanceLearning.Store.Users_Teacher" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id_User" />
+      </Principal>
+      <Dependent Role="Teacher">
+        <PropertyRef Name="Id_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_inherits_User">
+    <End Role="User" Type="DistanceLearning.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Student" Type="DistanceLearning.Store.Users_Student" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id_User" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="Id_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

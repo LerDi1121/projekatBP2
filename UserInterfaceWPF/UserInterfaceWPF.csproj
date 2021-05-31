@@ -64,29 +64,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Answers.cs">
-      <DependentUpon>ModelTest21.tt</DependentUpon>
-    </Compile>
     <Compile Include="BindableBase.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Course.cs">
-      <DependentUpon>ModelTest21.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CourseStatus.cs">
-      <DependentUpon>ModelTest21.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DistanceLearning.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DistanceLearning.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Mark.cs">
-      <DependentUpon>ModelTest21.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Message.cs">
-      <DependentUpon>ModelTest21.tt</DependentUpon>
-    </Compile>
     <Compile Include="ModelRepositoryInterface\ICourseRepository.cs" />
     <Compile Include="ModelRepositoryInterface\IMarkRepository.cs" />
     <Compile Include="ModelRepositoryInterface\IMessageRepository.cs" />
@@ -113,46 +93,12 @@
     <Compile Include="ModelRepository\TeacherRepository.cs" />
     <Compile Include="ModelRepository\TestRepository.cs" />
     <Compile Include="ModelRepository\UserRepository.cs" />
-    <Compile Include="ModelTest21.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelTest21.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelTest21.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelTest21.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Question.cs">
-      <DependentUpon>ModelTest21.tt</DependentUpon>
-    </Compile>
-    <Compile Include="QuestionLevel.cs">
-      <DependentUpon>ModelTest21.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Receive.cs">
-      <DependentUpon>ModelTest21.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Registered.cs">
-      <DependentUpon>ModelTest21.tt</DependentUpon>
-    </Compile>
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\IUnitOfWork.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="Repository\UnitOfWork.cs" />
-    <Compile Include="Role.cs">
-      <DependentUpon>ModelTest21.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Student.cs">
-      <DependentUpon>ModelTest21.tt</DependentUpon>
-    </Compile>
     <Compile Include="StudentWindow.xaml.cs">
       <DependentUpon>StudentWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Takes.cs">
-      <DependentUpon>ModelTest21.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Teacher.cs">
-      <DependentUpon>ModelTest21.tt</DependentUpon>
     </Compile>
     <Compile Include="TeacherViewModel\CourseViewModel.cs" />
     <Compile Include="TeacherViewModel\MessageViewModel.cs" />
@@ -179,17 +125,8 @@
     <Compile Include="TeacherWindow.xaml.cs">
       <DependentUpon>TeacherWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Teaching_topic.cs">
-      <DependentUpon>ModelTest21.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Test.cs">
-      <DependentUpon>ModelTest21.tt</DependentUpon>
-    </Compile>
     <Compile Include="TransferModels\LoginModel.cs" />
     <Compile Include="TransferModels\MessageToSend.cs" />
-    <Compile Include="User.cs">
-      <DependentUpon>ModelTest21.tt</DependentUpon>
-    </Compile>
     <Compile Include="ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -198,11 +135,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DistanceLearning.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DistanceLearning.edmx</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -255,13 +187,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DistanceLearning.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DistanceLearning.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="DistanceLearning.edmx.diagram">
-      <DependentUpon>DistanceLearning.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -275,28 +200,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DistanceLearning.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DistanceLearning.Context.cs</LastGenOutput>
-      <DependentUpon>DistanceLearning.edmx</DependentUpon>
-    </Content>
-    <Content Include="DistanceLearning.edmx.sql" />
-    <Content Include="DistanceLearning.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DistanceLearning.cs</LastGenOutput>
-      <DependentUpon>DistanceLearning.edmx</DependentUpon>
-    </Content>
-    <Content Include="ModelTest21.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelTest21.Context.cs</LastGenOutput>
-      <DependentUpon>DistanceLearning.edmx</DependentUpon>
-    </Content>
-    <Content Include="ModelTest21.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelTest21.cs</LastGenOutput>
-      <DependentUpon>DistanceLearning.edmx</DependentUpon>
-    </Content>
+    <ProjectReference Include="..\DataBase\DataBase.csproj">
+      <Project>{C3F91491-873E-4336-B63C-C415B7477BCC}</Project>
+      <Name>DataBase</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
