@@ -13,5 +13,10 @@ namespace UserInterfaceWPF.Controllers
         {
             return null;
         }
+        public static void AddTeachingTopic(Teaching_topic data)
+        {
+            MainWindow.UnitOfWork_.Teaching_topicRepository.Add(data);
+            MainWindow.UnitOfWork_.Teaching_topicRepository.Save();
+        }
     }
 }

@@ -38,3 +38,5 @@ C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterface
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterfaceWPF.pdb
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\NewCourseView.g.cs
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\NewCourseView.baml
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\NewTeachingTopicView.g.cs
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\NewTeachingTopicView.baml

@@ -20,6 +20,7 @@
         <KeyBinding Key="F4" Command="{Binding NavCommand}" CommandParameter="Profile"/>
         <KeyBinding Key="F5" Command="{Binding NavCommand}" CommandParameter="NewMessage"/>
         <KeyBinding Key="F6" Command="{Binding NavCommand}" CommandParameter="NewCourse"/>
+        <KeyBinding Key="F7" Command="{Binding NavCommand}" CommandParameter="TeachingTopic"/>
      </Window.InputBindings>
     
     <Window.Resources>
@@ -41,10 +42,14 @@
         <DataTemplate DataType="{x:Type viewModel:NewCourseViewModel}">
             <views:NewCourseView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:NewTeachingTopicViewModel}">
+            <views:NewTeachingTopicView/>
+        </DataTemplate>
     </Window.Resources>
     
     <Grid Background="#d6e7f9">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -68,6 +73,9 @@
                 
                 <MenuItem Header="New Course" Command="{Binding NavCommand}"
                           CommandParameter="NewCourse"/>
+
+                <MenuItem Header="New topic" Command="{Binding NavCommand}"
+                          CommandParameter="TeachingTopic"/>
 
 
             </Menu>

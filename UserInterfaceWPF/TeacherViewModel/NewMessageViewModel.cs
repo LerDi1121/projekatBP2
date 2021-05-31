@@ -32,7 +32,7 @@ namespace UserInterfaceWPF.TeacherViewModel
                 if (tbText != value)
                 {
                     tbText = value;
-                    OnPropertyChanged("IdText");
+                    OnPropertyChanged("TbText");
                     AddCommand.RaiseCanExecuteChanged();
                 }
             }
@@ -48,7 +48,7 @@ namespace UserInterfaceWPF.TeacherViewModel
                 if (tbTitle != value)
                 {
                     tbTitle = value;
-                    OnPropertyChanged("IdText");
+                    OnPropertyChanged("TbTitle");
                     AddCommand.RaiseCanExecuteChanged();
                 }
             }
