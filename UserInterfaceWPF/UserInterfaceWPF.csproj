@@ -65,7 +65,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BindableBase.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\TeachingTopicController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="ModelRepositoryInterface\ICourseRepository.cs" />
     <Compile Include="ModelRepositoryInterface\IMarkRepository.cs" />
@@ -103,14 +105,22 @@
     <Compile Include="TeacherViewModel\CourseViewModel.cs" />
     <Compile Include="TeacherViewModel\MessageViewModel.cs" />
     <Compile Include="TeacherViewModel\MyICommand.cs" />
+    <Compile Include="TeacherViewModel\NewCourseViewModel.cs" />
     <Compile Include="TeacherViewModel\NewMessageViewModel.cs" />
     <Compile Include="TeacherViewModel\ProfileViewModel.cs" />
+    <Compile Include="TeacherViewModel\NewTeachingTopicViewModel.cs" />
     <Compile Include="TeacherViewModel\TestViewModel.cs" />
     <Compile Include="TeacherViews\MessageView.xaml.cs">
       <DependentUpon>MessageView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TeacherViews\NewCourseView.xaml.cs">
+      <DependentUpon>NewCourseView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TeacherViews\NewMessageView.xaml.cs">
       <DependentUpon>NewMessageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\NewTeachingTopicView.xaml.cs">
+      <DependentUpon>NewTeachingTopicView.xaml</DependentUpon>
     </Compile>
     <Compile Include="TeacherViews\ProfileView.xaml.cs">
       <DependentUpon>ProfileView.xaml</DependentUpon>
@@ -127,6 +137,7 @@
     </Compile>
     <Compile Include="TransferModels\LoginModel.cs" />
     <Compile Include="TransferModels\MessageToSend.cs" />
+    <Compile Include="TransferModels\MessageToView.cs" />
     <Compile Include="ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -152,7 +163,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="TeacherViews\NewCourseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TeacherViews\NewMessageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TeacherViews\NewTeachingTopicView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -12,24 +12,23 @@
 
         <StackPanel Orientation="Horizontal">
                 <TextBlock Text="   " FontSize="25"/>
-                <Button x:Name="btnNewMesage" Height="40"  Content="New Message" FontSize="20" Width="157" Click="btnNewMesage_Click"/>
-                <TextBlock Text="   " FontSize="25"/>
-                <Button x:Name="btnAll" Height="40"  Content="All" FontSize="20" Width="70" />
-                <TextBlock Text="   " FontSize="25"/>
-                <Button x:Name="btnToMe" Height="40"  Content="To Me" FontSize="20" Width="90" />
-                <TextBlock Text="   " FontSize="25"/>
-                <Button x:Name="btnForMe" Height="40"  Content="For Me" FontSize="20" Width="90" />
-                <TextBlock Text="   " FontSize="25"/>
+                <TextBlock Text="   " FontSize="50"/>
+                <Button x:Name="btnAll" Height="40"  Content="All" FontSize="20" Width="70"  Command="{Binding AllMessageCommand}" />
+                <TextBlock Text="   " FontSize="50"/>
+                <Button x:Name="btnToMe" Height="40"  Content="To Me" FontSize="20" Width="90"  Command="{Binding ToMeCommand}"/>
+                <TextBlock Text="   " FontSize="50"/>
+                <Button x:Name="btnFromMe" Height="40"  Content="From Me" FontSize="20" Width="118" Command="{Binding FromMeCommand}" />
+                <TextBlock Text="   " FontSize="50"/>
                 <Button x:Name="btnDelete" Height="40"  Content="Delete Selected Message" FontSize="20" Width="252" Command="{Binding DeleteCommand}" />
 
 
             </StackPanel>
             <Separator Height="10"/>
-            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Path=Message, UpdateSourceTrigger=PropertyChanged}"  SelectedItem="{Binding SelectedMessage}" CanUserAddRows="False" Height="220" Width="750">
+            <DataGrid AutoGenerateColumns="False"  ItemsSource="{Binding Path=Message,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  SelectedItem="{Binding SelectedMessage}" CanUserAddRows="False" Height="220" Width="750">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="From " Binding="{Binding Id}" Width="150" />
-                    <DataGridTextColumn Header="To" Binding="{Binding Name}" Width="150" />
-                    <DataGridTextColumn Header="Title" Binding="{Binding Value, UpdateSourceTrigger=PropertyChanged}" Width="150" />
+                    <DataGridTextColumn Header="From " Binding="{Binding From}" Width="150" />
+                    <DataGridTextColumn Header="To" Binding="{Binding To}" Width="150" />
+                    <DataGridTextColumn Header="Title" Binding="{Binding Title}" Width="*" />
                     
                 </DataGrid.Columns>
             </DataGrid>

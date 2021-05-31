@@ -18,6 +18,7 @@ namespace UserInterfaceWPF
         private MessageViewModel MessageViewModel = new MessageViewModel();
         private ProfileViewModel ProfileViewModel = new ProfileViewModel();
         private NewMessageViewModel NewMessageViewModel = new NewMessageViewModel();
+        private NewCourseViewModel NewCourseViewModel = new NewCourseViewModel();
         public TeacherWindowViewModel()
         {
           
@@ -51,6 +52,9 @@ namespace UserInterfaceWPF
                     break;
                 case "NewMessage":
                     CurrentViewModel = NewMessageViewModel;
+                    break;
+                case "NewCourse":
+                    CurrentViewModel = NewCourseViewModel;
                     break;
 
             }
