@@ -18,7 +18,7 @@ namespace UserInterfaceWPF.TeacherViewModel
         public MyICommand AllMessageCommand { get; set; }
         //AllMessageCommand
 
-        private Message selectedMessage;
+        private MessageToView selectedMessage;
         public static ObservableCollection<MessageToView> Message { get; set; } = new ObservableCollection<MessageToView>();
         public MessageViewModel()
         {
@@ -37,14 +37,14 @@ namespace UserInterfaceWPF.TeacherViewModel
         private void GetMessFromMe()
         {
          
-           Message= MessageController.GetMessFromMe(MainWindow.CurrentUser) as ObservableCollection<MessageToView>;
+           Message= MessageController.GetMessFromMe(MainWindow.CurrentUser) ;
             OnPropertyChanged("Message");
            
         }
         private void GetMessToMe()
         {  
         
-            Message = MessageController.GetMessToMe(MainWindow.CurrentUser) as ObservableCollection<MessageToView>;
+            Message = MessageController.GetMessToMe(MainWindow.CurrentUser);
             OnPropertyChanged("Message");
 
 
@@ -52,15 +52,16 @@ namespace UserInterfaceWPF.TeacherViewModel
         private void GetAllMessage()
         {
        
-             Message = MessageController.GetAllMessageForUser(MainWindow.CurrentUser) as ObservableCollection<MessageToView>;
+             Message = MessageController.GetAllMessageForUser(MainWindow.CurrentUser) ;
             OnPropertyChanged("Message");
 
         }
         private void OnDelete()
         {
-          //  Vodomeri.Remove(SelectedVodomer);
+            if (selectedMessage != null)
+            MessageController.DeleteMessage(selectedMessage.Message);
         }
-        public Message SelectedMessage
+        public MessageToView SelectedMessage
         {
             get
             {

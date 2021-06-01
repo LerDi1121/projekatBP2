@@ -12,6 +12,8 @@ namespace UserInterfaceWPF.Controllers
 {
     static class MessageController
     {
+      //  static private DateTime DefDate_of_deletion = new DateTime(2000, 1, 1, 1, 1, 1);
+        //static private DateTime DefDate_of_reading = new DateTime(2000, 1, 1, 1, 1, 1);
         public static ObservableCollection<MessageToView> GetMessFromMe(User user)
         {
             ObservableCollection<MessageToView> retVal = new ObservableCollection<MessageToView>();
@@ -143,6 +145,10 @@ namespace UserInterfaceWPF.Controllers
             };
             return retVal;
 
+        }
+        static public void  DeleteMessage( Message data)
+        {
+            //nesto
         }
     }
 }

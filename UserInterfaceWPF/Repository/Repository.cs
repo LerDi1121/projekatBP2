@@ -44,7 +44,7 @@ namespace UserInterfaceWPF.Repository
 
         public void Remove(TEntity entity)
         {
-            context.Set<TEntity>().Remove(entity);
+                       context.Set<TEntity>().Remove(entity);
         
         }
 

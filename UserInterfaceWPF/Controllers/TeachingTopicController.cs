@@ -18,5 +18,11 @@ namespace UserInterfaceWPF.Controllers
             MainWindow.UnitOfWork_.Teaching_topicRepository.Add(data);
             MainWindow.UnitOfWork_.Teaching_topicRepository.Save();
         }
+
+        internal static void DeleteTopic(Teaching_topic data)
+        {
+            MainWindow.UnitOfWork_.Teaching_topicRepository.Remove(data);
+            MainWindow.UnitOfWork_.Teaching_topicRepository.Save();
+        }
     }
 }

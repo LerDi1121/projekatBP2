@@ -6,7 +6,36 @@
              xmlns:local="clr-namespace:UserInterfaceWPF.TeacherViews"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Yellow">
-        <Label Content="sadfsada f " Width="100" Height="100"> </Label> 
+    <Grid  Background="#B8FFF3">
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" Height="100">
+                <Label Width="180" Content="Course"  FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
+                <ComboBox x:Name="cbSearch" FontSize="20" Width="516"  Height="40" 
+                           ItemsSource="{Binding AllCourse}" SelectedItem="{Binding  SelectedCourse}" Margin="0,30"    />
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"/>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="   " FontSize="25"/>
+                <TextBlock Text="   " FontSize="50"/>
+                <Button x:Name="btnDeleteCourse" Height="40"  Content="Delete Course" FontSize="20" Width="252"  Command="{Binding DeleteCourseCommand}" />
+                <TextBlock Text="            " FontSize="50"/>
+                <Button x:Name="btnDeleteTopic" Height="40"  Content="Delete Selected Topic" FontSize="20" Width="252"  Command="{Binding DeleteTopicCommand}" />
+
+
+            </StackPanel>
+            <Separator Height="10"></Separator>
+            <DataGrid AutoGenerateColumns="False"  ItemsSource="{Binding Path=AllTopic,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedTopic}" CanUserAddRows="False" Height="220" Width="750">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Topic name " Binding="{Binding Topic_name}" Width="150" />
+                    <DataGridTextColumn Header="Serial number in course" Binding="{Binding Serial_number}" Width="150" />
+                  
+                </DataGrid.Columns>
+            </DataGrid>
+            <Separator Height="50"></Separator>
+
+        </StackPanel>
+
     </Grid>
 </UserControl>
