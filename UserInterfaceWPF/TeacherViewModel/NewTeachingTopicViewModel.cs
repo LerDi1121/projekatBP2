@@ -1,14 +1,11 @@
 ﻿using DataBase;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UserInterfaceWPF.Controllers;
 
 namespace UserInterfaceWPF.TeacherViewModel
 {
-   public  class NewTeachingTopicViewModel:BindableBase
+    public class NewTeachingTopicViewModel : BindableBase
     {
         public List<string> AllCourse { get; set; } = new List<string>();
         public List<Course> AllCoursesObj { get; set; } = new List<Course>();
@@ -28,7 +25,7 @@ namespace UserInterfaceWPF.TeacherViewModel
         }
         private Course getCourseBuyName(string name)
         {
-            foreach(var c in AllCoursesObj)
+            foreach (var c in AllCoursesObj)
             {
                 if (c.Course_name == name)
                     return c;
@@ -48,7 +45,7 @@ namespace UserInterfaceWPF.TeacherViewModel
                 {
                     tbTitle = value;
                     OnPropertyChanged("TbTitle");
-                  SaveCommand.RaiseCanExecuteChanged();
+                    SaveCommand.RaiseCanExecuteChanged();
                 }
             }
         }
@@ -60,10 +57,10 @@ namespace UserInterfaceWPF.TeacherViewModel
                 return false;
             return true;
         }
-        private int GetMaxSerialForCourse( Course data)
+        private int GetMaxSerialForCourse(Course data)
         {
             int retVal = 0;
-            foreach(var tt in data.Teaching_topic)
+            foreach (var tt in data.Teaching_topic)
             {
                 if (tt.Serial_number > retVal)
                     retVal = tt.Serial_number;

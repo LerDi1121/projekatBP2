@@ -1,10 +1,5 @@
 ﻿using DataBase;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UserInterfaceWPF.TransferModels
 {
@@ -13,7 +8,7 @@ namespace UserInterfaceWPF.TransferModels
         private string from;
         private string to;
         private string title;
-        public Message  Message;
+        public Message Message;
 
         public string To
         {
@@ -51,7 +46,7 @@ namespace UserInterfaceWPF.TransferModels
                 }
             }
         }
-   
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void RaisePropertyChanged(string property)
         {

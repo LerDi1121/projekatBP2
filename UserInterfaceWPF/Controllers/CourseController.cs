@@ -1,15 +1,12 @@
 ﻿using DataBase;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UserInterfaceWPF.Controllers
 {
-   public static class CourseController
+    public static class CourseController
     {
-       public static void AddCourse(Course data )
+        public static void AddCourse(Course data)
         {
             MainWindow.UnitOfWork_.CourseRepository.Add(data);
             MainWindow.UnitOfWork_.CourseRepository.Save();
@@ -26,38 +23,38 @@ namespace UserInterfaceWPF.Controllers
             //izbrisati veze
             foreach (var reg in data.Registereds)
             {
-              //  MainWindow.UnitOfWork_.CourseRepository.Remove(data);
-            /*  foreach( var takes in reg.Takes)
-                {
-                    MainWindow.UnitOfWork_.TakesRepository.Remove(takes);
-                    MainWindow.UnitOfWork_.TakesRepository.Save();
-                }*/
+                //  MainWindow.UnitOfWork_.CourseRepository.Remove(data);
+                /*  foreach( var takes in reg.Takes)
+                    {
+                        MainWindow.UnitOfWork_.TakesRepository.Remove(takes);
+                        MainWindow.UnitOfWork_.TakesRepository.Save();
+                    }*/
                 MainWindow.UnitOfWork_.RegisteredRepository.Remove(reg);
                 MainWindow.UnitOfWork_.RegisteredRepository.Save();
             }
             foreach (var tt in data.Teaching_topic)
             {
                 //  MainWindow.UnitOfWork_.CourseRepository.Remove(data);
-                
-                    MainWindow.UnitOfWork_.Teaching_topicRepository.Remove(tt);
-                    MainWindow.UnitOfWork_.Teaching_topicRepository.Save();
-              
+
+                MainWindow.UnitOfWork_.Teaching_topicRepository.Remove(tt);
+                MainWindow.UnitOfWork_.Teaching_topicRepository.Save();
+
             }
             foreach (var test in data.Tests)
             {
-               /* //  MainWindow.UnitOfWork_.CourseRepository.Remove(data);
-                foreach (var takes in test.Takes)
-                {
-                    MainWindow.UnitOfWork_.TakesRepository.Remove(takes);
-                    MainWindow.UnitOfWork_.TakesRepository.Save();
-                }
-               */
+                /* //  MainWindow.UnitOfWork_.CourseRepository.Remove(data);
+                 foreach (var takes in test.Takes)
+                 {
+                     MainWindow.UnitOfWork_.TakesRepository.Remove(takes);
+                     MainWindow.UnitOfWork_.TakesRepository.Save();
+                 }
+                */
                 MainWindow.UnitOfWork_.TestRepository.Remove(test);
                 MainWindow.UnitOfWork_.TestRepository.Save();
 
             }
             MainWindow.UnitOfWork_.CourseRepository.Remove(data);
-           MainWindow.UnitOfWork_.CourseRepository.Save();
+            MainWindow.UnitOfWork_.CourseRepository.Save();
         }
 
     }

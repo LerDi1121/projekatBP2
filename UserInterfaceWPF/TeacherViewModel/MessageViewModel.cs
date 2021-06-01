@@ -1,10 +1,4 @@
-﻿using DataBase;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using UserInterfaceWPF.Controllers;
 using UserInterfaceWPF.TransferModels;
 
@@ -36,14 +30,14 @@ namespace UserInterfaceWPF.TeacherViewModel
         }
         private void GetMessFromMe()
         {
-         
-           Message= MessageController.GetMessFromMe(MainWindow.CurrentUser) ;
+
+            Message = MessageController.GetMessFromMe(MainWindow.CurrentUser);
             OnPropertyChanged("Message");
-           
+
         }
         private void GetMessToMe()
-        {  
-        
+        {
+
             Message = MessageController.GetMessToMe(MainWindow.CurrentUser);
             OnPropertyChanged("Message");
 
@@ -51,15 +45,15 @@ namespace UserInterfaceWPF.TeacherViewModel
         }
         private void GetAllMessage()
         {
-       
-             Message = MessageController.GetAllMessageForUser(MainWindow.CurrentUser) ;
+
+            Message = MessageController.GetAllMessageForUser(MainWindow.CurrentUser);
             OnPropertyChanged("Message");
 
         }
         private void OnDelete()
         {
             if (selectedMessage != null)
-            MessageController.DeleteMessage(selectedMessage.Message);
+                MessageController.DeleteMessage(selectedMessage.Message);
         }
         public MessageToView SelectedMessage
         {

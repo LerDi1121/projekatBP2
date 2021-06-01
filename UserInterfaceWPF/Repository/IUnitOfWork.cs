@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UserInterfaceWPF.ModelRepository;
 
 namespace UserInterfaceWPF.Repository
 {
-    interface IUnitOfWork: IDisposable
+    interface IUnitOfWork : IDisposable
     {
         AnswersRepository AnswersRepository { get; }
         CourseRepository CourseRepository { get; }
@@ -22,6 +18,6 @@ namespace UserInterfaceWPF.Repository
         Teaching_topicRepository Teaching_topicRepository { get; }
         TestRepository TestRepository { get; }
         UserRepository UserRepository { get; }
-       
+
     }
 }

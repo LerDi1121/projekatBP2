@@ -21,6 +21,7 @@
         <KeyBinding Key="F5" Command="{Binding NavCommand}" CommandParameter="NewMessage"/>
         <KeyBinding Key="F6" Command="{Binding NavCommand}" CommandParameter="NewCourse"/>
         <KeyBinding Key="F7" Command="{Binding NavCommand}" CommandParameter="TeachingTopic"/>
+        <KeyBinding Key="F8" Command="{Binding NavCommand}" CommandParameter="NewTest"/>
      </Window.InputBindings>
     
     <Window.Resources>
@@ -45,10 +46,14 @@
         <DataTemplate DataType="{x:Type viewModel:NewTeachingTopicViewModel}">
             <views:NewTeachingTopicView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:NewTestViewModel}">
+            <views:NewTestView/>
+        </DataTemplate>
     </Window.Resources>
     
     <Grid Background="#d6e7f9">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -77,7 +82,8 @@
                 <MenuItem Header="New topic" Command="{Binding NavCommand}"
                           CommandParameter="TeachingTopic"/>
 
-
+                <MenuItem Header="New Test" Command="{Binding NavCommand}"
+                          CommandParameter="NewTest"/>
             </Menu>
         </DockPanel>
         <Grid Grid.Row="1">

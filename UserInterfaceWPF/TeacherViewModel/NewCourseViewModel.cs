@@ -1,14 +1,10 @@
 ﻿using DataBase;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UserInterfaceWPF.Controllers;
 
 namespace UserInterfaceWPF.TeacherViewModel
 {
-    class NewCourseViewModel: BindableBase
+    class NewCourseViewModel : BindableBase
     {
         public string SelectedItem { get; set; }
         public MyICommand SaveCommand { get; set; }
@@ -42,7 +38,7 @@ namespace UserInterfaceWPF.TeacherViewModel
             switch (data)
             {
                 case "Active":
-                    retVal= DataBase.CourseStatus.Active;
+                    retVal = DataBase.CourseStatus.Active;
                     break;
                 case "Inactive":
                     retVal = DataBase.CourseStatus.Inactive;
@@ -50,7 +46,7 @@ namespace UserInterfaceWPF.TeacherViewModel
                 case "InPreparation":
                     retVal = DataBase.CourseStatus.InPreparation;
                     break;
-                    
+
 
             }
             return retVal;
@@ -62,7 +58,7 @@ namespace UserInterfaceWPF.TeacherViewModel
                 Course_name = tbName,
                 Teacher = MainWindow.CurrentUser as Teacher,
                 Course_status = FindStatus(SelectedItem)
-                
+
             };
             CourseController.AddCourse(course);
         }

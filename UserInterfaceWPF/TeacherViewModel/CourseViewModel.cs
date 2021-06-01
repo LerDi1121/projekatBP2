@@ -1,21 +1,18 @@
 ﻿using DataBase;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using UserInterfaceWPF.Controllers;
 
 namespace UserInterfaceWPF.TeacherViewModel
 {
-    public class CourseViewModel: BindableBase
+    public class CourseViewModel : BindableBase
     {
         public static Dictionary<string, Course> AllCourseObj { get; set; } = new Dictionary<string, Course>();
         public string selectedCourse { get; set; }
         public List<string> AllCourse { get; set; } = new List<string>();
-       public  ObservableCollection<Teaching_topic> AllTopic { get; set; } = new ObservableCollection<Teaching_topic>();
+        public ObservableCollection<Teaching_topic> AllTopic { get; set; } = new ObservableCollection<Teaching_topic>();
         private Teaching_topic selectedTopic { get; set; }
 
         public MyICommand DeleteCourseCommand { get; set; }
@@ -49,7 +46,8 @@ namespace UserInterfaceWPF.TeacherViewModel
             SetTopicForcourse();
             MessageBox.Show("Topic deleted");
         }
-        public Teaching_topic  SelectedTopic {
+        public Teaching_topic SelectedTopic
+        {
             get
             {
                 return selectedTopic;
@@ -58,13 +56,13 @@ namespace UserInterfaceWPF.TeacherViewModel
             {
                 selectedTopic = value;
                 DeleteTopicCommand.RaiseCanExecuteChanged();
-               // SetTopicForcourse();
+                // SetTopicForcourse();
             }
         }
         public void GetCourse()
         {
             HashSet<Course> temp = CourseController.GetAllCourseForTeacher(MainWindow.CurrentUser).ToHashSet();
-            foreach(Course c in temp)
+            foreach (Course c in temp)
             {
                 AllCourse.Add(c.Course_name);
                 AllCourseObj[c.Course_name] = c;
@@ -89,7 +87,7 @@ namespace UserInterfaceWPF.TeacherViewModel
         private void SetTopicForcourse()
         {
             AllTopic.Clear();
-            foreach(var t in AllCourseObj[selectedCourse].Teaching_topic)
+            foreach (var t in AllCourseObj[selectedCourse].Teaching_topic)
             {
                 AllTopic.Add(t);
             }

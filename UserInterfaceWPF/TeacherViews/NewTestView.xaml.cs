@@ -4,14 +4,14 @@ using UserInterfaceWPF.TeacherViewModel;
 namespace UserInterfaceWPF.TeacherViews
 {
     /// <summary>
-    /// Interaction logic for ProfileView.xaml
+    /// Interaction logic for NewTestView.xaml
     /// </summary>
-    public partial class ProfileView : UserControl
+    public partial class NewTestView : UserControl
     {
-        public ProfileView()
+        public NewTestView()
         {
             InitializeComponent();
-            this.DataContext = new ProfileViewModel();
+            this.DataContext = new NewTestViewModel();
         }
     }
 }

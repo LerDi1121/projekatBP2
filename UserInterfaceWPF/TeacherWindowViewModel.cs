@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UserInterfaceWPF.TeacherViewModel;
 
 namespace UserInterfaceWPF
 {
-   public  class TeacherWindowViewModel: BindableBase
+    public class TeacherWindowViewModel : BindableBase
     {
         public MyICommand<string> NavCommand { get; private set; }
 
@@ -20,12 +16,13 @@ namespace UserInterfaceWPF
         private NewMessageViewModel NewMessageViewModel = new NewMessageViewModel();
         private NewCourseViewModel NewCourseViewModel = new NewCourseViewModel();
         private NewTeachingTopicViewModel newTeachingTopicViewModel = new NewTeachingTopicViewModel();
+        private NewTestViewModel newTestViewModel = new NewTestViewModel();
         public TeacherWindowViewModel()
         {
-          
-                NavCommand = new MyICommand<String>(OnNav);
-                currentViewModel = CourseViewModel;
-            
+
+            NavCommand = new MyICommand<String>(OnNav);
+            currentViewModel = CourseViewModel;
+
         }
         public BindableBase CurrentViewModel
         {
@@ -59,6 +56,9 @@ namespace UserInterfaceWPF
                     break;
                 case "TeachingTopic":
                     CurrentViewModel = newTeachingTopicViewModel;
+                    break;
+                case "NewTest":
+                    CurrentViewModel = newTestViewModel;
                     break;
 
             }

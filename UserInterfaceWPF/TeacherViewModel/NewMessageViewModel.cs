@@ -2,14 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UserInterfaceWPF.Controllers;
 using UserInterfaceWPF.TransferModels;
 
 namespace UserInterfaceWPF.TeacherViewModel
 {
-    class NewMessageViewModel:BindableBase
+    class NewMessageViewModel : BindableBase
     {
         public List<string> AllUsername { get; set; } = new List<string>();
         public string SelectedItem { get; set; }
@@ -18,8 +16,8 @@ namespace UserInterfaceWPF.TeacherViewModel
         public string tbTitle { get; set; }
         public NewMessageViewModel()
         {
-            AllUsername = UserController.getAllUsername().ToList() ;
-            AddCommand = new MyICommand(OnSend,CanSend);
+            AllUsername = UserController.getAllUsername().ToList();
+            AddCommand = new MyICommand(OnSend, CanSend);
         }
         public string TbText
         {
@@ -53,7 +51,7 @@ namespace UserInterfaceWPF.TeacherViewModel
                 }
             }
         }
-        public  bool CanSend()
+        public bool CanSend()
         {
             if (tbText == string.Empty || tbTitle == string.Empty)
                 return false;

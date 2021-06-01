@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UserInterfaceWPF.ModelRepository;
 
 namespace UserInterfaceWPF.Repository
 {
-    public class UnitOfWork: IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         public readonly DistanceLearningContainer context;
         public UnitOfWork()
         {
             this.context = new DistanceLearningContainer();
-            
+
             AnswersRepository = new AnswersRepository(this.context);
             CourseRepository = new CourseRepository(this.context);
             MarkRepository = new MarkRepository(this.context);
@@ -27,7 +23,7 @@ namespace UserInterfaceWPF.Repository
             Teaching_topicRepository = new Teaching_topicRepository(this.context);
             TestRepository = new TestRepository(this.context);
             UserRepository = new UserRepository(this.context);
-                
+
         }
         #region field 
         public AnswersRepository AnswersRepository { get; set; }
@@ -50,7 +46,7 @@ namespace UserInterfaceWPF.Repository
 
         public TeacherRepository TeacherRepository { get; set; }
         public Teaching_topicRepository Teaching_topicRepository { get; set; }
-    
+
         public TestRepository TestRepository { get; set; }
 
         public UserRepository UserRepository { get; set; }
