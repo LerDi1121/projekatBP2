@@ -33,5 +33,11 @@ namespace UserInterfaceWPF.Controllers
             }
                     
         }
+        public static ICollection<Registered> GetAllRegistrationForStudent()
+        {
+            var student = (Student)MainWindow.CurrentUser;
+            return MainWindow.UnitOfWork_.RegisteredRepository.GetAll().Where(r => r.Student.Id_Student == student.Id_Student).ToList();
+        }
+        
     }
 }

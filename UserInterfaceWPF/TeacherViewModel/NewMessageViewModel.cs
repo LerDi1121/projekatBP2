@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 using UserInterfaceWPF.Controllers;
 using UserInterfaceWPF.TransferModels;
 
@@ -73,6 +74,8 @@ namespace UserInterfaceWPF.TeacherViewModel
                 usernameTo = SelectedItem
             };
             MessageController.SendMesage(data);
+            MessageBox.Show("Successful sent ");
+
         }
     }
 }

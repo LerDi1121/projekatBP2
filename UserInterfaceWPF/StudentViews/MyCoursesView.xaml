@@ -6,7 +6,28 @@
              xmlns:local="clr-namespace:UserInterfaceWPF.StudentViews"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+    <Grid  Background="#B8FFF3">
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" Height="75">
+                <Label Width="180" Content="My course"  FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
+                <ComboBox x:Name="cbSearch" FontSize="20" Width="516"  Height="40" 
+                           ItemsSource="{Binding AllCourse}" SelectedItem="{Binding  SelectedCourse}"    />
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"/>
+
+
+            <DataGrid AutoGenerateColumns="False"  ItemsSource="{Binding Path=AllTopic,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedTopic}" CanUserAddRows="False" Height="220" Width="750">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Topic name " Binding="{Binding Topic_name}" Width="150" />
+                    <DataGridTextColumn Header="Serial number in course" Binding="{Binding Serial_number}" Width="150" />
+
+                </DataGrid.Columns>
+            </DataGrid>
+            <Separator Height="20"></Separator>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+            <Separator Height="200"></Separator>
+        </StackPanel>
+
     </Grid>
 </UserControl>

@@ -15,6 +15,8 @@
     <Window.InputBindings>
         <KeyBinding Key="F1" Command="{Binding NavCommand}" CommandParameter="Courses"/>
         <KeyBinding Key="F2" Command="{Binding NavCommand}" CommandParameter="MyCourse"/>
+        <KeyBinding Key="F3" Command="{Binding NavCommand}" CommandParameter="Tests"/>
+        <KeyBinding Key="F4" Command="{Binding NavCommand}" CommandParameter="TestHistory"/>
        
     </Window.InputBindings>
 
@@ -25,7 +27,14 @@
         <DataTemplate DataType="{x:Type viewModel:MyCoursesViewModel}">
             <views:MyCoursesView/>
         </DataTemplate>
-       
+  
+        <DataTemplate DataType="{x:Type viewModel:TestViewModel}">
+            <views:TestView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:TestHistoryViewModel}">
+            <views:TestHistoryView/>
+        </DataTemplate>
+
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -44,7 +53,10 @@
                           CommandParameter="Courses"/>
                 <MenuItem Header="My courses" Command="{Binding NavCommand}"
                           CommandParameter="MyCourse"/>
-              
+                <MenuItem Header="Tests" Command="{Binding NavCommand}"
+                          CommandParameter="Tests"/>
+                <MenuItem Header="Tests history" Command="{Binding NavCommand}"
+                          CommandParameter="TestHistory"/>
             </Menu>
         </DockPanel>
         <Grid Grid.Row="1">

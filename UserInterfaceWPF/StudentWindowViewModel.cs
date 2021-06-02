@@ -15,6 +15,8 @@ namespace UserInterfaceWPF
         public BindableBase currentViewModel;
         private CoursesViewModel CoursesViewModel = new CoursesViewModel();
         private MyCoursesViewModel MyCoursesViewModel = new MyCoursesViewModel();
+        private StudentViewModel.TestViewModel TestViewModel = new StudentViewModel.TestViewModel();
+        private TestHistoryViewModel TestHistoryViewModel = new TestHistoryViewModel();
         public StudentWindowViewModel()
         {
             NavCommand = new MyICommand<String>(OnNav);
@@ -32,13 +34,13 @@ namespace UserInterfaceWPF
                 case "MyCourse":
                     CurrentViewModel = MyCoursesViewModel;
                     break;
-             /*   case "Message":
-                    CurrentViewModel = MessageViewModel;
+               case "Tests":
+                    CurrentViewModel = TestViewModel;
                     break;
-                case "Profile":
-                    CurrentViewModel = ProfileViewModel;
+                case "TestHistory":
+                    CurrentViewModel = TestHistoryViewModel;
                     break;
-                case "NewMessage":
+               /* case "NewMessage":
                     CurrentViewModel = NewMessageViewModel;
                     break;
                 case "NewCourse":

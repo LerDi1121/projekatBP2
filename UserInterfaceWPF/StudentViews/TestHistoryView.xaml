@@ -1,36 +1,26 @@
-﻿<UserControl x:Class="UserInterfaceWPF.TeacherViews.TestView"
+﻿<UserControl x:Class="UserInterfaceWPF.StudentViews.TestHistoryView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:UserInterfaceWPF.TeacherViews"
+             xmlns:local="clr-namespace:UserInterfaceWPF.StudentViews"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid  Background="#B8FFF3">
         <StackPanel Orientation="Vertical">
 
-           
-            <StackPanel Orientation="Horizontal"/>
-
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-
-                <Button x:Name="btnReport" Height="40"  Content="Report" FontSize="20" Width="252"  Command="{Binding ReportCommand}" />
-
-
-            </StackPanel>
-            <Separator Height="10"></Separator>
-            <DataGrid AutoGenerateColumns="False"  ItemsSource="{Binding Path=AllTests,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedTest}" CanUserAddRows="False" Height="240" Width="750">
+            <Separator Height="50"></Separator>
+            <DataGrid AutoGenerateColumns="False"  ItemsSource="{Binding Path=AllTests,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedTest}" CanUserAddRows="False" Height="327" Width="750" Margin="25,0">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Test name " Binding="{Binding TestName}" Width="150" />
                     <DataGridTextColumn Header="Course name " Binding="{Binding CourseName}" Width="150" />
                     <DataGridTextColumn Header="Max points" Binding="{Binding TestPoints}" Width="150" />
-                    <DataGridTextColumn Header="Questions" Binding="{Binding QuestionNumber}" Width="150" />
-
+                
+                    <DataGridTextColumn Header="Mark " Binding="{Binding MarkValue}" Width="50" />
+                    <DataGridTextColumn Header="Description" Binding="{Binding MarkDescription}" Width="150" />
+                  
                 </DataGrid.Columns>
             </DataGrid>
-            <Separator Height="50"></Separator>
-
         </StackPanel>
-
     </Grid>
 </UserControl>

@@ -9,3 +9,4 @@ C:\Users\banes\source\repos\projekatBP2\DataBase\obj\Debug\DataBase.csproj.CoreC
 C:\Users\banes\source\repos\projekatBP2\DataBase\obj\Debug\DataBase.csproj.CopyComplete
 C:\Users\banes\source\repos\projekatBP2\DataBase\obj\Debug\DataBase.dll
 C:\Users\banes\source\repos\projekatBP2\DataBase\obj\Debug\DataBase.pdb
+C:\Users\banes\source\repos\projekatBP2\DataBase\obj\Debug\DataBase.csprojAssemblyReference.cache

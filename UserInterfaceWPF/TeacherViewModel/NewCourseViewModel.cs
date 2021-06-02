@@ -1,5 +1,6 @@
 ﻿using DataBase;
 using System.Collections.Generic;
+using System.Windows;
 using UserInterfaceWPF.Controllers;
 
 namespace UserInterfaceWPF.TeacherViewModel
@@ -61,6 +62,7 @@ namespace UserInterfaceWPF.TeacherViewModel
 
             };
             CourseController.AddCourse(course);
+            MessageBox.Show("Successful");
         }
 
         private bool CanSave()

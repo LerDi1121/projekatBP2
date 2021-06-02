@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\App.xaml
-141805283721
+181628774712
 
-73-140372589
+84-1014353432
 21-1749654501
-MainWindow.xaml;NewQuestion.xaml;StudentViews\CoursesView.xaml;StudentViews\MyCoursesView.xaml;StudentWindow.xaml;TeacherViews\CourseView.xaml;TeacherViews\MessageView.xaml;TeacherViews\NewCourseView.xaml;TeacherViews\NewMessageView.xaml;TeacherViews\NewTeachingTopicView.xaml;TeacherViews\NewTestView.xaml;TeacherViews\ProfileView.xaml;TeacherViews\TestView.xaml;TeacherWindow.xaml;
+MainWindow.xaml;NewQuestion.xaml;StudentViews\CoursesView.xaml;StudentViews\MyCoursesView.xaml;StudentViews\TestHistoryView.xaml;StudentViews\TestView.xaml;StudentWindow.xaml;TeacherViews\CourseView.xaml;TeacherViews\MessageView.xaml;TeacherViews\NewCourseView.xaml;TeacherViews\NewMessageView.xaml;TeacherViews\NewTeachingTopicView.xaml;TeacherViews\NewTestView.xaml;TeacherViews\ProfileView.xaml;TeacherViews\TestView.xaml;TeacherWindow.xaml;TestReport.xaml;TryTest.xaml;
 
-True
+False
 

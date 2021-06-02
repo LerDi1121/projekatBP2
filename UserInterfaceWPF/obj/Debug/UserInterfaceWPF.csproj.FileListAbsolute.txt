@@ -48,3 +48,9 @@ C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterface
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterfaceWPF.csproj.CopyComplete
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterfaceWPF.exe
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterfaceWPF.pdb
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\StudentViews\TestView.g.cs
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\StudentViews\TestView.baml
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TryTest.g.cs
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TryTest.baml
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\StudentViews\TestHistoryView.g.cs
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\StudentViews\TestHistoryView.baml

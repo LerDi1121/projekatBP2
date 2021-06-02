@@ -68,8 +68,10 @@
     </ApplicationDefinition>
     <Compile Include="BindableBase.cs" />
     <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Controllers\MarkController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\RegisteredController.cs" />
+    <Compile Include="Controllers\TakesController.cs" />
     <Compile Include="Controllers\TeachingTopicController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -108,11 +110,19 @@
     <Compile Include="Repository\UnitOfWork.cs" />
     <Compile Include="StudentViewModel\CoursesViewModel.cs" />
     <Compile Include="StudentViewModel\MyCoursesViewModel.cs" />
+    <Compile Include="StudentViewModel\TestHistoryViewModel.cs" />
+    <Compile Include="StudentViewModel\TestViewModel.cs" />
     <Compile Include="StudentViews\CoursesView.xaml.cs">
       <DependentUpon>CoursesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="StudentViews\MyCoursesView.xaml.cs">
       <DependentUpon>MyCoursesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentViews\TestHistoryView.xaml.cs">
+      <DependentUpon>TestHistoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentViews\TestView.xaml.cs">
+      <DependentUpon>TestView.xaml</DependentUpon>
     </Compile>
     <Compile Include="StudentWindow.xaml.cs">
       <DependentUpon>StudentWindow.xaml</DependentUpon>
@@ -155,9 +165,18 @@
     <Compile Include="TeacherWindow.xaml.cs">
       <DependentUpon>TeacherWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TestReport.xaml.cs">
+      <DependentUpon>TestReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransferModels\TestHistory.cs" />
     <Compile Include="TransferModels\LoginModel.cs" />
     <Compile Include="TransferModels\MessageToSend.cs" />
     <Compile Include="TransferModels\MessageToView.cs" />
+    <Compile Include="TransferModels\TestForStudentView.cs" />
+    <Compile Include="TransferModels\TestReport.cs" />
+    <Compile Include="TryTest.xaml.cs">
+      <DependentUpon>TryTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -180,6 +199,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StudentViews\MyCoursesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentViews\TestHistoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentViews\TestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -220,6 +247,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TeacherWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TryTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

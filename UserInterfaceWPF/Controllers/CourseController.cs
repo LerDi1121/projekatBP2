@@ -20,21 +20,24 @@ namespace UserInterfaceWPF.Controllers
         public static ICollection<Course> GetAllCourseForStudent(User data)
         {
             HashSet<Course> retval = new HashSet<Course>();
-            retval = MainWindow.UnitOfWork_.CourseRepository.GetAll().ToHashSet();
+            HashSet<Registered> temp = new HashSet<Registered>();
+            temp = MainWindow.UnitOfWork_.RegisteredRepository.GetAll().ToHashSet();
+            foreach(var r in temp)
+            { retval.Add(r.Course); }
             return retval;
         }
 
         public static void DeleteCourse(Course data)
         {
             //izbrisati veze
-            foreach (var reg in data.Registereds)
+          /*  foreach (var reg in data.Registereds)
             {
                 //  MainWindow.UnitOfWork_.CourseRepository.Remove(data);
-                /*  foreach( var takes in reg.Takes)
+                  foreach( var takes in reg.Takes)
                     {
                         MainWindow.UnitOfWork_.TakesRepository.Remove(takes);
                         MainWindow.UnitOfWork_.TakesRepository.Save();
-                    }*/
+                    }
                 MainWindow.UnitOfWork_.RegisteredRepository.Remove(reg);
                 MainWindow.UnitOfWork_.RegisteredRepository.Save();
             }
@@ -48,19 +51,19 @@ namespace UserInterfaceWPF.Controllers
             }
             foreach (var test in data.Tests)
             {
-                /* //  MainWindow.UnitOfWork_.CourseRepository.Remove(data);
+                ///  MainWindow.UnitOfWork_.CourseRepository.Remove(data);
                  foreach (var takes in test.Takes)
                  {
                      MainWindow.UnitOfWork_.TakesRepository.Remove(takes);
                      MainWindow.UnitOfWork_.TakesRepository.Save();
                  }
-                */
+                
                 MainWindow.UnitOfWork_.TestRepository.Remove(test);
                 MainWindow.UnitOfWork_.TestRepository.Save();
 
             }
             MainWindow.UnitOfWork_.CourseRepository.Remove(data);
-            MainWindow.UnitOfWork_.CourseRepository.Save();
+            MainWindow.UnitOfWork_.CourseRepository.Save();*/
         }
 
     }

@@ -4,6 +4,8 @@ FC:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\MainWindow.xaml;;
 FC:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\NewQuestion.xaml;;
 FC:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\StudentViews\CoursesView.xaml;;
 FC:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\StudentViews\MyCoursesView.xaml;;
+FC:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\StudentViews\TestHistoryView.xaml;;
+FC:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\StudentViews\TestView.xaml;;
 FC:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\StudentWindow.xaml;;
 FC:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\TeacherViews\CourseView.xaml;;
 FC:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\TeacherViews\MessageView.xaml;;
@@ -14,4 +16,5 @@ FC:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\TeacherViews\NewTestVi
 FC:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\TeacherViews\ProfileView.xaml;;
 FC:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\TeacherViews\TestView.xaml;;
 FC:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\TeacherWindow.xaml;;
+FC:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\TryTest.xaml;;
 

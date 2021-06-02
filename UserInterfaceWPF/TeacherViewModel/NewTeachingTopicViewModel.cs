@@ -1,6 +1,7 @@
 ﻿using DataBase;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 using UserInterfaceWPF.Controllers;
 
 namespace UserInterfaceWPF.TeacherViewModel
@@ -79,6 +80,7 @@ namespace UserInterfaceWPF.TeacherViewModel
 
             };
             TeachingTopicController.AddTeachingTopic(topic);
+            MessageBox.Show("Successful");
         }
     }
 }
