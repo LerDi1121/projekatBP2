@@ -17,6 +17,12 @@ namespace UserInterfaceWPF.Controllers
             retval = MainWindow.UnitOfWork_.CourseRepository.GetAll().Where(c => c.Teacher.Id_User == data.Id_User).ToHashSet();
             return retval;
         }
+        public static ICollection<Course> GetAllCourseForStudent(User data)
+        {
+            HashSet<Course> retval = new HashSet<Course>();
+            retval = MainWindow.UnitOfWork_.CourseRepository.GetAll().ToHashSet();
+            return retval;
+        }
 
         public static void DeleteCourse(Course data)
         {

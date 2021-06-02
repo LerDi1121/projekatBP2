@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UserInterfaceWPF.StudentViewModel;
 using UserInterfaceWPF.TeacherViewModel;
 
 namespace UserInterfaceWPF
@@ -12,23 +13,26 @@ namespace UserInterfaceWPF
         public MyICommand<string> NavCommand { get; private set; }
 
         public BindableBase currentViewModel;
+        private CoursesViewModel CoursesViewModel = new CoursesViewModel();
+        private MyCoursesViewModel MyCoursesViewModel = new MyCoursesViewModel();
         public StudentWindowViewModel()
         {
             NavCommand = new MyICommand<String>(OnNav);
+            CurrentViewModel = CoursesViewModel;
 
         }
 
         private void OnNav(string destination)
         {
-            /*switch (destination)
+            switch (destination)
             {
-                case "Course":
-                    CurrentViewModel = CourseViewModel;
+                case "Courses":
+                    CurrentViewModel = CoursesViewModel;
                     break;
-                case "Test":
-                    CurrentViewModel = TestViewModel;
+                case "MyCourse":
+                    CurrentViewModel = MyCoursesViewModel;
                     break;
-                case "Message":
+             /*   case "Message":
                     CurrentViewModel = MessageViewModel;
                     break;
                 case "Profile":
@@ -45,9 +49,9 @@ namespace UserInterfaceWPF
                     break;
                 case "NewTest":
                     CurrentViewModel = newTestViewModel;
-                    break;
+                    break;*/
 
-            }*/
+            }
         }
 
         public BindableBase CurrentViewModel

@@ -13,16 +13,7 @@
             <local:TeacherWindowViewModel/>
     </Window.DataContext>
     
-    <Window.InputBindings>
-        <KeyBinding Key="F1" Command="{Binding NavCommand}" CommandParameter="Course"/>
-        <KeyBinding Key="F2" Command="{Binding NavCommand}" CommandParameter="Test"/>
-        <KeyBinding Key="F3" Command="{Binding NavCommand}" CommandParameter="Message"/>
-        <KeyBinding Key="F4" Command="{Binding NavCommand}" CommandParameter="Profile"/>
-        <KeyBinding Key="F5" Command="{Binding NavCommand}" CommandParameter="NewMessage"/>
-        <KeyBinding Key="F6" Command="{Binding NavCommand}" CommandParameter="NewCourse"/>
-        <KeyBinding Key="F7" Command="{Binding NavCommand}" CommandParameter="TeachingTopic"/>
-        <KeyBinding Key="F8" Command="{Binding NavCommand}" CommandParameter="NewTest"/>
-     </Window.InputBindings>
+  
     
     <Window.Resources>
         <DataTemplate DataType="{x:Type viewModel:CourseViewModel}">

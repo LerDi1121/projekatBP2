@@ -69,6 +69,7 @@
     <Compile Include="BindableBase.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\RegisteredController.cs" />
     <Compile Include="Controllers\TeachingTopicController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -107,8 +108,8 @@
     <Compile Include="Repository\UnitOfWork.cs" />
     <Compile Include="StudentViewModel\CoursesViewModel.cs" />
     <Compile Include="StudentViewModel\MyCoursesViewModel.cs" />
-    <Compile Include="StudentViews\Courses.xaml.cs">
-      <DependentUpon>Courses.xaml</DependentUpon>
+    <Compile Include="StudentViews\CoursesView.xaml.cs">
+      <DependentUpon>CoursesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="StudentViews\MyCoursesView.xaml.cs">
       <DependentUpon>MyCoursesView.xaml</DependentUpon>
@@ -174,7 +175,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="StudentViews\Courses.xaml">
+    <Page Include="StudentViews\CoursesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

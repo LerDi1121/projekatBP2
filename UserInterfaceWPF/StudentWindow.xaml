@@ -9,7 +9,50 @@
         mc:Ignorable="d"
         Closing="Window_Closing"
         Title="StudentWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:StudentWindowViewModel/>
+    </Window.DataContext>
+    <Window.InputBindings>
+        <KeyBinding Key="F1" Command="{Binding NavCommand}" CommandParameter="Courses"/>
+        <KeyBinding Key="F2" Command="{Binding NavCommand}" CommandParameter="MyCourse"/>
+       
+    </Window.InputBindings>
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModel:CoursesViewModel}">
+            <views:CoursesView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:MyCoursesViewModel}">
+            <views:MyCoursesView/>
+        </DataTemplate>
+       
+    </Window.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" Margin="5">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="Courses" Command="{Binding NavCommand}"
+                          CommandParameter="Courses"/>
+                <MenuItem Header="My courses" Command="{Binding NavCommand}"
+                          CommandParameter="MyCourse"/>
+              
+            </Menu>
+        </DockPanel>
+        <Grid Grid.Row="1">
+            <!--Grid.ColumnDefinitions>
+                <ColumnDefinition Width="23*"/>
+                <ColumnDefinition Width="373*"/>
+            </!-->
+            <ContentControl Content="{Binding CurrentViewModel}" Grid.ColumnSpan="3"/>
+        </Grid>
     </Grid>
 </Window>

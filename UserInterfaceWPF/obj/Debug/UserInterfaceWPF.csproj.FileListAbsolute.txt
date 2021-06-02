@@ -11,6 +11,8 @@ C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\bin\Debug\EntityFramewo
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterfaceWPF.csprojAssemblyReference.cache
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\MainWindow.g.cs
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\NewQuestion.g.cs
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\StudentViews\CoursesView.g.cs
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\StudentViews\MyCoursesView.g.cs
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\StudentWindow.g.cs
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\CourseView.g.cs
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\MessageView.g.cs
@@ -27,6 +29,8 @@ C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterface
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\UserInterfaceWPF_MarkupCompile.lref
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\MainWindow.baml
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\NewQuestion.baml
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\StudentViews\CoursesView.baml
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\StudentViews\MyCoursesView.baml
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\StudentWindow.baml
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\CourseView.baml
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TeacherViews\MessageView.baml

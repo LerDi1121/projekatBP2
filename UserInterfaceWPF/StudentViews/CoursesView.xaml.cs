@@ -18,9 +18,9 @@ namespace UserInterfaceWPF.StudentViews
     /// <summary>
     /// Interaction logic for Courses.xaml
     /// </summary>
-    public partial class Courses : UserControl
+    public partial class CoursesView : UserControl
     {
-        public Courses()
+        public CoursesView()
         {
             InitializeComponent();
         }
