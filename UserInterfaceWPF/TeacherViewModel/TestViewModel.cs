@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using UserInterfaceWPF.Controllers;
 using UserInterfaceWPF.TransferModels;
 
@@ -11,10 +12,17 @@ namespace UserInterfaceWPF.TeacherViewModel
         public MyICommand ReportCommand { get; set; }
         public TestViewModel()
         {
-          //  TryTestCommand = new MyICommand(CanTry, OnTry);
+            ReportCommand = new MyICommand( OnReport);
 
             AllTests = TestController.TestForTeacher();
         }
+
+        private void OnReport()
+        {
+            TestReport wind = new TestReport(selectedTest.Test);
+            wind.ShowDialog();
+        }
+
         public TestForStudentView SelectedTest
         {
             get

@@ -54,3 +54,5 @@ C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TryTest.g.cs
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TryTest.baml
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\StudentViews\TestHistoryView.g.cs
 C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\StudentViews\TestHistoryView.baml
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TestReport.g.cs
+C:\Users\banes\source\repos\projekatBP2\UserInterfaceWPF\obj\Debug\TestReport.baml

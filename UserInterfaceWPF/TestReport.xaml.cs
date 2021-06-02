@@ -1,5 +1,7 @@
-﻿using System;
+﻿using DataBase;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UserInterfaceWPF.Controllers;
 
 namespace UserInterfaceWPF
 {
@@ -19,9 +22,14 @@ namespace UserInterfaceWPF
     /// </summary>
     public partial class TestReport : Window
     {
-        public TestReport()
+        public ObservableCollection<UserInterfaceWPF.TransferModels.TestReport> AllReports { get; set; } 
+
+        public TestReport( Test data)
         {
+            DataContext = this;
             InitializeComponent();
+            AllReports = TestController.CreateReportsForTest(data);
+            datagrid.ItemsSource = AllReports;
         }
     }
 }

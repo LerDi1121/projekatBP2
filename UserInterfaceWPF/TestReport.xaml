@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UserInterfaceWPF"
         mc:Ignorable="d"
+          DataContext="{Binding RelativeSource={RelativeSource Self}}"
         Title="TestReport" Height="450" Width="800">
-    <Grid>
-        
+    <Grid  Background="#B8FFF3">
+        <StackPanel Orientation="Vertical">
+
+            <Separator Height="10"></Separator>
+            <StackPanel Orientation="Horizontal"/>
+
+            <Separator Height="10"></Separator>
+           
+                
+          
+            <Separator></Separator>
+            <DataGrid x:Name="datagrid"  AutoGenerateColumns="False"  ItemsSource="{Binding Path=AllReports,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" CanUserAddRows="False" Height="330" Width="750" Margin="25,0,17,0">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Username " Binding="{Binding Username}" Width="80" />
+                    <DataGridTextColumn Header="Name  " Binding="{Binding NameSurname}" Width="130" />
+                    <DataGridTextColumn Header="Test" Binding="{Binding Test}" Width="130" />
+                    <DataGridTextColumn Header="Course name" Binding="{Binding Course}" Width="100" />
+                    <DataGridTextColumn Header="Max point" Binding="{Binding MaxPoints}" Width="65" />
+                    <DataGridTextColumn Header="Point won" Binding="{Binding Points}" Width="65" />
+                    <DataGridTextColumn Header="Mark" Binding="{Binding MarkValue}" Width="65" />
+                    <DataGridTextColumn Header="Description" Binding="{Binding MarkDesc}" Width="150" />
+
+                </DataGrid.Columns>
+            </DataGrid>
+            <Separator Height="50"></Separator>
+
+        </StackPanel>
+
     </Grid>
 </Window>

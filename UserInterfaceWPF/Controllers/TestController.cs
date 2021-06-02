@@ -127,5 +127,29 @@ namespace UserInterfaceWPF.Controllers
             }
             return retval;
         }
+        static public ObservableCollection<UserInterfaceWPF.TransferModels.TestReport> CreateReportsForTest(Test data)
+        {
+          
+            ObservableCollection<TransferModels.TestReport> retval = new ObservableCollection<TransferModels.TestReport>();
+            foreach(var take in data.Takes)
+            {
+               retval.Add( new TransferModels.TestReport()
+                {
+                    Username = take.Registered.Student.Username,
+                    NameSurname = take.Registered.Student.Name + " " + take.Registered.Student.Surname,
+                    Test = data.Test_Name,
+                    Course = data.Course.Course_name,
+                    MaxPoints = data.Points,
+                    Points = take.Won_points,
+                    MarkValue = take.Marks.Value_of_Mark,
+                    MarkDesc = take.Marks.Description_of_mark
+
+                });
+              
+
+            }
+            return retval;
+        }
+
     }
 }
