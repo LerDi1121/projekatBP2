@@ -20,7 +20,38 @@ namespace UserInterfaceWPF
 
             InitializeComponent();
 
+           /* var temp = new Teacher()
+            {
+                Id_User=10,
+                Id_Teacher=10,
+                Title = "inz",
+                Proession = "prof",
+                Username = "rof",
+                Surname = "Surname",
+                Name = "Name",
+                Role = Role.Teacher,
+                eMail = "email",
+                Password = "prof"
 
+            };
+            var tempStud = new Student()
+            {
+                Id_User = 11,
+                Id_Student=11,
+                Username = "stud",
+                Surname = "Surname",
+                Name = "Name",
+                Role = Role.Student,
+                eMail = "email",
+                Password = "stud",
+                Class="psi"
+            };
+           
+            MainWindow.UnitOfWork_.StudentRepository.Add(tempStud);
+            MainWindow.UnitOfWork_.StudentRepository.Save();
+
+           MainWindow.UnitOfWork_.TeacherRepository.Add(temp);
+            MainWindow.UnitOfWork_.TeacherRepository.Save();*/
 
         }
 

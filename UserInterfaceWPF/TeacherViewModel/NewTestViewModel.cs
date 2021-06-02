@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows;
 using UserInterfaceWPF.Controllers;
 
 namespace UserInterfaceWPF.TeacherViewModel
@@ -103,6 +104,7 @@ namespace UserInterfaceWPF.TeacherViewModel
 
             };
             TestController.AddTest(testForAdding);
+            MessageBox.Show("Successful");
            
         }
        

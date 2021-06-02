@@ -40,7 +40,7 @@ namespace UserInterfaceWPF.StudentViewModel
         }
         public void GetCourse()
         {
-            HashSet<Course> temp = CourseController.GetAllCourseForStudent(MainWindow.CurrentUser).ToHashSet();
+            HashSet<Course> temp = CourseController.GetAllCourse().ToHashSet();
             foreach (Course c in temp)
             {
                 AllCourse.Add(c.Course_name);

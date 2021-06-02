@@ -17,11 +17,19 @@ namespace UserInterfaceWPF.Controllers
             retval = MainWindow.UnitOfWork_.CourseRepository.GetAll().Where(c => c.Teacher.Id_User == data.Id_User).ToHashSet();
             return retval;
         }
+        public static ICollection<Course> GetAllCourse()
+        {
+            HashSet<Course> retval = new HashSet<Course>();
+            HashSet<Course> temp = new HashSet<Course>();
+            temp = MainWindow.UnitOfWork_.CourseRepository.GetAll().ToHashSet();
+        
+            return temp;
+        }
         public static ICollection<Course> GetAllCourseForStudent(User data)
         {
             HashSet<Course> retval = new HashSet<Course>();
             HashSet<Registered> temp = new HashSet<Registered>();
-            temp = MainWindow.UnitOfWork_.RegisteredRepository.GetAll().ToHashSet();
+            temp = MainWindow.UnitOfWork_.RegisteredRepository.GetAll().Where(r=>r.Student.Id_User==data.Id_User).ToHashSet();
             foreach(var r in temp)
             { retval.Add(r.Course); }
             return retval;
