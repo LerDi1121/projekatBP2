@@ -44,8 +44,10 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -68,6 +70,7 @@
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\TeachingTopicController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="ModelRepositoryInterface\ICourseRepository.cs" />
     <Compile Include="ModelRepositoryInterface\IMarkRepository.cs" />
@@ -102,9 +105,18 @@
     <Compile Include="Repository\IUnitOfWork.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="Repository\UnitOfWork.cs" />
+    <Compile Include="StudentViewModel\CoursesViewModel.cs" />
+    <Compile Include="StudentViewModel\MyCoursesViewModel.cs" />
+    <Compile Include="StudentViews\Courses.xaml.cs">
+      <DependentUpon>Courses.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentViews\MyCoursesView.xaml.cs">
+      <DependentUpon>MyCoursesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StudentWindow.xaml.cs">
       <DependentUpon>StudentWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StudentWindowViewModel.cs" />
     <Compile Include="TeacherViewModel\CourseViewModel.cs" />
     <Compile Include="TeacherViewModel\MessageViewModel.cs" />
     <Compile Include="TeacherViewModel\MyICommand.cs" />
@@ -159,6 +171,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="NewQuestion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentViews\Courses.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentViews\MyCoursesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -239,5 +259,6 @@
       <Name>DataBase</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -32,7 +32,7 @@
             </StackPanel>
 
             <Separator Height="10"/>
-            <DataGrid AutoGenerateColumns="False"  ItemsSource="{Binding Path=NewQuestion,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  SelectedItem="{Binding SelectedQuestion}" CanUserAddRows="False" Height="220" Width="750">
+            <DataGrid AutoGenerateColumns="False"  ItemsSource="{Binding Path=NewQuestions,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  SelectedItem="{Binding SelectedQuestion}" CanUserAddRows="False" Height="220" Width="750">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Text " Binding="{Binding Tekst}" Width="150" />
                     <DataGridTextColumn Header="Level" Binding="{Binding Level}" Width="150" />

@@ -10,7 +10,7 @@ namespace UserInterfaceWPF.TeacherViewModel
     public class NewTestViewModel : BindableBase
     {
         public static Dictionary<string, Course> AllCourseObj { get; set; } = new Dictionary<string, Course>();
-        public string SelectedCourse { get; set; }
+        public string selectedCourse { get; set; }
         public string TbTestName { get; set; }
         public static HashSet<Question> Questions { get; set; } = new HashSet<Question>();
         public List<string> AllCourse { get; set; } = new List<string>();
@@ -18,8 +18,8 @@ namespace UserInterfaceWPF.TeacherViewModel
         public MyICommand AddTestCommand { get; set; }
         public MyICommand AddQuestionCommand { get; set; }
         public MyICommand DeleteQuestionCommand { get; set; }
-        public Question SelectedQuestion { get; set; }
-        public ObservableCollection<Question> NewQuestion { get; set; } = new ObservableCollection<Question>();
+        public Question selectedQuestion { get; set; }
+        public ObservableCollection<Question> NewQuestions { get; set; } = new ObservableCollection<Question>();
 
         public NewTestViewModel()
         {
@@ -29,19 +29,48 @@ namespace UserInterfaceWPF.TeacherViewModel
             GetCourse();
         }
 
+        public string SelectedCourse
+        {
+            get
+            {
+                return selectedCourse;
+            }
+            set
+            {
+                selectedCourse = value;
+                AddQuestionCommand.RaiseCanExecuteChanged();
+               
+            }
+
+        }
+
+        public Question SelectedQuestion {
+            get
+            {
+                return selectedQuestion;
+            }
+            set
+            {
+                selectedQuestion = value;
+                DeleteQuestionCommand.RaiseCanExecuteChanged();
+                // SetTopicForcourse();
+            }
+        }
+
         private bool CanAddQuestion()
         {
-            return true;
+            return selectedCourse!=null;
         }
 
         private bool CanDeleteQuestion()
         {
-            return true;
+            return selectedQuestion!=null;
         }
 
         private void OnDeleteQuestion()
         {
-            int i = 0;
+            NewQuestions.Remove(selectedQuestion);
+            OnPropertyChanged("NewQuestions");
         }
 
         private void OnAddQuestion()
@@ -49,18 +78,34 @@ namespace UserInterfaceWPF.TeacherViewModel
             Question data = new Question(); 
              NewQuestion wind = new NewQuestion(data);
             wind.ShowDialog();
-            NewQuestion.Add(data);
+            NewQuestions.Add(data);
+            AddTestCommand.RaiseCanExecuteChanged();
         }
 
         private bool CanAddTest()
         {
-            return true;
+            return NewQuestions.Count>=2&&(TbTestName!=null &&TbTestName!=string.Empty);
         }
 
         private void OnAddTest()
         {
-            int i = 0;
+            int pointsForTest = 0;
+            foreach (var q in NewQuestions)
+            {
+                pointsForTest += q.Total_points;
+            }
+            var testForAdding = new Test()
+            {
+                Test_Name = TbTestName,
+                Points=pointsForTest,
+                Course =AllCourseObj[selectedCourse],
+                Questions= NewQuestions
+
+            };
+            TestController.AddTest(testForAdding);
+           
         }
+       
 
         public void GetCourse()
         {
